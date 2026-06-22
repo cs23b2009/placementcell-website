@@ -37,5 +37,19 @@ app.use(erf);
 
 app.set('view engine', 'ejs')
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT,()=>{console.log(`Server live at port ${PORT}`)});
+function startServer(port) {
+  const server = app.listen(port, () => console.log(`Server live at port ${port}`));
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      const newPort = port + 1;
+      console.log(`Port ${port} in use, trying ${newPort}`);
+      startServer(newPort);
+    } else {
+      console.error(err);
+    }
+  });
+}
+
+const DEFAULT_PORT = 5000;
+const PORT = process.env.PORT || DEFAULT_PORT;
+startServer(PORT);

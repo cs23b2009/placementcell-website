@@ -7,9 +7,6 @@ route.get("/", (req, res) => {
 route.get("/customhome", function (req, res) {
   res.render("home_old");
 });
-route.get("/students", (req, res) => {
-  res.render("students");
-});
 route.get("/contactUs", (req, res) => {
   res.render("contactUs");
 });
@@ -64,14 +61,5 @@ route.get("/notFound", (req, res) => {
 });
 
 
-
-// route for placement schedule
-route.get("/schedule_and_faq", (req, res) => {
-  res.render("schedule_and_faq");
-});
-
-route.get("/internshipRules", (req, res) => {
-  res.render("internshipRules");
-});
 
 module.exports = route;

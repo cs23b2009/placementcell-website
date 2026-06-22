@@ -11,7 +11,7 @@ var transporter = nodemailer.createTransport({
 
 
 route.get('/erf',(req,res)=>{
-    res.redirect('https://forms.gle/LpUj3JLqqFAmZ5Ai7')
+    res.redirect('https://docs.google.com/forms/d/e/1FAIpQLSfjby-fXR7rflr-uikRxqGw8oi4RLsuZCwaQ0CX8DvzgokUOg/viewform')
 })
 route.post('/erf',(req,res)=>{
     console.log(req.body);

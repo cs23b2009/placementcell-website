@@ -7,157 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="img/icons/logo.png" type="image/icon">
   <link rel="stylesheet" href="/css/statistics.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Roboto+Mono&display=swap"
+    rel="stylesheet">
   <!-- google charts api -->
   <script src="https://www.gstatic.com/charts/loader.js"></script>
   <title>Placement Statistics</title>
-  <style>
-    .toggle-container {
-      display: flex;
-      justify-content: center;
-      margin: 2rem 0;
-    }
-
-    .toggle-switch {
-      position: relative;
-      width: 300px;
-      height: 50px;
-      background: #f0f0f0;
-      border-radius: 20px;
-      padding: 4px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .toggle-input {
-      display: none;
-    }
-
-    .toggle-label {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      height: 100%;
-      position: relative;
-      cursor: pointer;
-      background: #fff;
-      border-radius: 20px;
-      transition: 0.3s ease;
-      border: 2px solid #1a237e;
-    }
-
-    .toggle-text {
-      width: 50%;
-      text-align: center;
-      font-weight: 500;
-      color: #666;
-      transition: 0.3s ease;
-      z-index: 1;
-    }
-
-    .toggle-label:before {
-      content: '';
-      position: absolute;
-      width: 50%;
-      height: 100%;
-      border-radius: 20px;
-      background: linear-gradient(90deg, #00ffe0, #1a237e);
-      left: 0;
-      transition: 0.3s ease;
-    }
-
-    .toggle-input:checked + .toggle-label:before {
-      left: 50%;
-    }
-
-    .toggle-input:checked + .toggle-label .toggle-text.current {
-      color: #666;
-    }
-
-    .toggle-input:checked + .toggle-label .toggle-text.past {
-      color: #fff;
-    }
-
-    .toggle-input:not(:checked) + .toggle-label .toggle-text.current {
-      color: #fff;
-    }
-
-    .toggle-input:not(:checked) + .toggle-label .toggle-text.past {
-      color: #666;
-    }
-
-    .stats-section {
-      transition: opacity 0.3s ease;
-    }
-
-    .stats-overview {
-      padding: 3rem 0;
-      background: #f8f9fa;
-      border-radius: 15px;
-      margin: 0 auto 4rem;
-      max-width: 1200px;
-      width: 95%;
-    }
-
-    .table-row:hover {
-      background-color: #f5f5f5;
-      transform: translateX(5px);
-    }
-
-    .table-container {
-      transition: transform 0.3s ease;
-    }
-
-    .table-container:hover {
-      transform: translateY(-5px);
-    }
-
-    @media (max-width: 768px) {
-      .stats-overview {
-        padding: 2rem 1rem;
-        width: 98%;
-      }
-      
-      .table-container {
-        width: 98% !important;
-      }
-      
-      .stats-overview .text-center {
-        font-size: 2rem !important;
-      }
-      
-      .table th, .table td {
-        padding: 15px !important;
-        font-size: 1rem !important;
-      }
-    }
-  </style>
 </head>
 
 <body>
   <%- include('templates/header-1.ejs') -%>
 
 
-    <div class="container container1" id="title" style="padding-top: 13%;">
-      <div class="text-center" style="
-        font-size: 3.5rem;
-        font-weight: 600;
-        color: #1a237e;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        padding: 4% 0;
-        position: relative;
-        margin-bottom: 2rem;">
-        Statistics
-        <div style="
-          width: 100px;
-          height: 4px;
-          background: linear-gradient(90deg, #00ffe0, #1a237e);
-          margin: 1rem auto 0;
-          border-radius: 2px;">
-        </div>
-      </div>
+    <header class="statistics-header">
+      <h1 class="statistics-page-title">Statistics</h1>
+    </header>
 
+    <div class="container container1" id="title">
       <!-- Add Toggle Switch -->
       <div class="toggle-container">
         <div class="toggle-switch">
@@ -170,495 +36,275 @@
       </div>
     </div>
 
-    <!-- Current Year Statistics (2024-25) -->
+    <!-- Current Year Statistics (2025-26) -->
     <div id="current-stats" class="stats-section">
+      <div class="stats-card-panel">
+        <h2 class="stats-table-title">UG &amp; PG Department wise Placed &amp; CTC Details - AY 2025-26</h2>
+        <p class="stats-table-subtitle">(As of June-2026)</p>
 
-
-      <div class="d-flex flex-column align-items-center  justify-content-center mb-3 " style="padding-left: 3%;">  
-        <div class="text-center mb-5" style="
-          color: #1a237e;
-          font-weight: 600;
-          font-family: 'Inter', sans-serif;
-          font-style: normal;
-          font-size: 1.8rem;
-          padding: 15px;
-          margin: 20px auto;
-          border-bottom: 3px solid #00ffe0;
-          max-width: 90%;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        ">
-          UG & PG Department wise Placed & CTC Details- AY 2024-25
-          <br>
-          <span style="font-size: 1.4rem; color: #424242;">(As of August-25-2025)</span>
-        </div>
-        <div class="table-container">
-          <table class="table mx-auto" id="my-table">
-            <tr class="my-th">
-              <th scope="col">Sl. No.</th>
-              <th scope="col">Programme</th>
-              <th scope="col">Department</th>
-              <th scope="col">No. of Registered Eligible Students*</th>
-              <th scope="col">No. of Offers</th>
-              <th scope="col">Offer %</th>
-              <th scope="col">Maximum CTC</th>
-            </tr>
-            <tr class="table-row">
-              <td>1</td>
-              <td>B.Tech</td>
-              <td>CSE</td>
-              <td>62</td>
-              <td>64</td>
-              <td>103.2%</td>
-              <td>32.57 LPA</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>B.Tech</td>
-              <td>CSE (AI)</td>
-              <td>31</td>
-              <td>22</td>
-              <td>71.0%</td>
-              <td>32.57 LPA</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>B.Tech</td>
-              <td>ECE</td>
-              <td>72</td>
-              <td>46</td>
-              <td>63.9%</td>
-              <td>31.64 LPA</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>B.Tech</td>
-              <td>MECH</td>
-              <td>44</td>
-              <td>31</td>
-              <td>70.5%</td>
-              <td>12.19 LPA</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>B.Tech</td>
-              <td>SM</td>
-              <td>20</td>
-              <td>13</td>
-              <td>65.0%</td>
-              <td>12.19 LPA</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>M.Tech</td>
-              <td>CSE(DS&AI)</td>
-              <td>11</td>
-              <td>8</td>
-              <td>72.7%</td>
-              <td>18.78 LPA</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>M.Tech</td>
-              <td>ECE(VLSI)</td>
-              <td>4</td>
-              <td>3</td>
-              <td>75.0%</td>
-              <td>18.78 LPA</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>M.Tech</td>
-              <td>ECE(CSD)</td>
-              <td>2</td>
-              <td>1</td>
-              <td>50.0%</td>
-              <td>6.00 LPA</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>M.Tech</td>
-              <td>MECH(SM)</td>
-              <td>2</td>
-              <td>1</td>
-              <td>50.0%</td>
-              <td>15.00 LPA</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>M.Tech</td>
-              <td>MECH(ESD)</td>
-              <td>2</td>
-              <td>1</td>
-              <td>50.0%</td>
-              <td>6.00 LPA</td>
-            </tr>
-            <tr>
-              <td>11</td>
-              <td>M.Des</td>
-              <td>IPD</td>
-              <td>10</td>
-              <td>8</td>
-              <td>80.0%</td>
-              <td>10.00 LPA</td>
-            </tr>
+        <div class="stats-table-wrapper">
+          <table class="stats-table">
+            <thead>
+              <tr>
+                <th scope="col">Sl. No.</th>
+                <th scope="col">Programme</th>
+                <th scope="col">Department</th>
+                <th scope="col" style="text-align: right;">Registered Eligible Students*</th>
+                <th scope="col" style="text-align: right;">Offers</th>
+                <th scope="col" style="text-align: right;">Offer %</th>
+                <th scope="col" style="text-align: right;">Maximum CTC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>B.Tech</td>
+                <td>CSE</td>
+                <td style="text-align: right;">64</td>
+                <td style="text-align: right;">73</td>
+                <td style="text-align: right; font-weight: 600; color: var(--clr-primary);">114.0%</td>
+                <td style="text-align: right; font-weight: 600; color: #16a34a; font-family: 'Roboto Mono', monospace;">
+                  59.00 LPA</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>B.Tech</td>
+                <td>CSE (AI)</td>
+                <td style="text-align: right;">37</td>
+                <td style="text-align: right;">41</td>
+                <td style="text-align: right; font-weight: 600; color: var(--clr-primary);">110.8%</td>
+                <td style="text-align: right; font-weight: 600; color: #16a34a; font-family: 'Roboto Mono', monospace;">
+                  21.36 LPA</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>B.Tech</td>
+                <td>ECE</td>
+                <td style="text-align: right;">70</td>
+                <td style="text-align: right;">30</td>
+                <td style="text-align: right; font-weight: 600; color: var(--clr-primary);">42.9%</td>
+                <td style="text-align: right; font-weight: 600; color: #16a34a; font-family: 'Roboto Mono', monospace;">
+                  18.00 LPA</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>B.Tech</td>
+                <td>MECH</td>
+                <td style="text-align: right;">45</td>
+                <td style="text-align: right;">32</td>
+                <td style="text-align: right; font-weight: 600; color: var(--clr-primary);">71.1%</td>
+                <td style="text-align: right; font-weight: 600; color: #16a34a; font-family: 'Roboto Mono', monospace;">
+                  16.00 LPA</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>B.Tech</td>
+                <td>SM</td>
+                <td style="text-align: right;">28</td>
+                <td style="text-align: right;">29</td>
+                <td style="text-align: right; font-weight: 600; color: var(--clr-primary);">103.6%</td>
+                <td style="text-align: right; font-weight: 600; color: #16a34a; font-family: 'Roboto Mono', monospace;">
+                  18.00 LPA</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>M.Tech</td>
+                <td>CSE(DS&amp;AI)</td>
+                <td style="text-align: right;">14</td>
+                <td style="text-align: right;">12</td>
+                <td style="text-align: right; font-weight: 600; color: var(--clr-primary);">85.7%</td>
+                <td style="text-align: right; font-weight: 600; color: #16a34a; font-family: 'Roboto Mono', monospace;">
+                  17.29 LPA</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>M.Tech</td>
+                <td>ECE(VLSI)</td>
+                <td style="text-align: right;">17</td>
+                <td style="text-align: right;">4</td>
+                <td style="text-align: right; font-weight: 600; color: var(--clr-primary);">23.5%</td>
+                <td style="text-align: right; font-weight: 600; color: #16a34a; font-family: 'Roboto Mono', monospace;">
+                  15.00 LPA</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>M.Tech</td>
+                <td>ECE(CSD)</td>
+                <td style="text-align: right;">6</td>
+                <td style="text-align: right;">2</td>
+                <td style="text-align: right; font-weight: 600; color: var(--clr-primary);">33.3%</td>
+                <td style="text-align: right; font-weight: 600; color: #16a34a; font-family: 'Roboto Mono', monospace;">
+                  7.50 LPA</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>M.Tech</td>
+                <td>MECH(SM)</td>
+                <td style="text-align: right;">3</td>
+                <td style="text-align: right;">3</td>
+                <td style="text-align: right; font-weight: 600; color: var(--clr-primary);">100.0%</td>
+                <td style="text-align: right; font-weight: 600; color: #16a34a; font-family: 'Roboto Mono', monospace;">
+                  10.00 LPA</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>M.Tech</td>
+                <td>MECH(MSD)</td>
+                <td style="text-align: right;">4</td>
+                <td style="text-align: right;">3</td>
+                <td style="text-align: right; font-weight: 600; color: var(--clr-primary);">75.0%</td>
+                <td style="text-align: right; font-weight: 600; color: #16a34a; font-family: 'Roboto Mono', monospace;">
+                  9.00 LPA</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>M.Des</td>
+                <td>IPD</td>
+                <td style="text-align: right;">8</td>
+                <td style="text-align: right;">4</td>
+                <td style="text-align: right; font-weight: 600; color: var(--clr-primary);">50.0%</td>
+                <td style="text-align: right; font-weight: 600; color: #16a34a; font-family: 'Roboto Mono', monospace;">
+                  9.00 LPA</td>
+              </tr>
+            </tbody>
           </table>
-          <p style="text-align: center; font-size: 0.9rem; font-style: italic; margin-top: 10px; margin-bottom: 15px; color: #505050;">*Excluding the students opted for Higher studies and Entrepreneurship</p>
         </div>
-        
-        <!-- Summary Statistics Section -->
-        <!-- <div class="stats-overview" style="margin-top: 3rem;">
-          <div class="text-center mb-4" style="
-            color: #1a237e;
-            font-weight: 600;
-            font-family: 'Inter', sans-serif;
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-          ">
-            Overall Placement Summary 2024-25
-            <div style="
-              width: 60px;
-              height: 4px;
-              background: linear-gradient(90deg, #00ffe0, #1a237e);
-              margin: 1rem auto 0;
-              border-radius: 2px;">
-            </div>
-          </div>
-          
-          <div class="d-flex flex-wrap justify-content-center" style="gap: 2rem; margin: 2rem 0;">
-            <div class="summary-card" style="
-              background: white;
-              border-radius: 15px;
-              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-              padding: 2rem;
-              text-align: center;
-              min-width: 200px;
-              border-left: 5px solid #00ffe0;
-            ">
-              <h3 style="color: #1a237e; font-size: 2.5rem; margin: 0; font-weight: 700;">370</h3>
-              <p style="color: #666; font-size: 1.1rem; margin: 0.5rem 0 0; font-weight: 500;">Total Students</p>
-            </div>
-            
-            <div class="summary-card" style="
-              background: white;
-              border-radius: 15px;
-              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-              padding: 2rem;
-              text-align: center;
-              min-width: 200px;
-              border-left: 5px solid #304ffe;
-            ">
-              <h3 style="color: #1a237e; font-size: 2.5rem; margin: 0; font-weight: 700;">260</h3>
-              <p style="color: #666; font-size: 1.1rem; margin: 0.5rem 0 0; font-weight: 500;">Eligible for Placement</p>
-            </div>
-            
-            <div class="summary-card" style="
-              background: white;
-              border-radius: 15px;
-              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-              padding: 2rem;
-              text-align: center;
-              min-width: 200px;
-              border-left: 5px solid #00c853;
-            ">
-              <h3 style="color: #1a237e; font-size: 2.5rem; margin: 0; font-weight: 700;">161</h3>
-              <p style="color: #666; font-size: 1.1rem; margin: 0.5rem 0 0; font-weight: 500;">Students Placed</p>
-            </div>
-            
-            <div class="summary-card" style="
-              background: white;
-              border-radius: 15px;
-              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-              padding: 2rem;
-              text-align: center;
-              min-width: 200px;
-              border-left: 5px solid #ff6d00;
-            ">
-              <h3 style="color: #1a237e; font-size: 2.5rem; margin: 0; font-weight: 700;">198</h3>
-              <p style="color: #666; font-size: 1.1rem; margin: 0.5rem 0 0; font-weight: 500;">Total Offers</p>
-            </div>
-          </div>
-          
-          <div class="d-flex flex-wrap justify-content-center" style="gap: 2rem; margin: 2rem 0;">
-            <div class="summary-card" style="
-              background: white;
-              border-radius: 15px;
-              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-              padding: 2rem;
-              text-align: center;
-              min-width: 200px;
-              border-left: 5px solid #e91e63;
-            ">
-              <h3 style="color: #1a237e; font-size: 2.5rem; margin: 0; font-weight: 700;">61.9%</h3>
-              <p style="color: #666; font-size: 1.1rem; margin: 0.5rem 0 0; font-weight: 500;">Overall Placement %</p>
-            </div>
-            
-            <div class="summary-card" style="
-              background: white;
-              border-radius: 15px;
-              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-              padding: 2rem;
-              text-align: center;
-              min-width: 200px;
-              border-left: 5px solid #9c27b0;
-            ">
-              <h3 style="color: #1a237e; font-size: 2.5rem; margin: 0; font-weight: 700;">76.2%</h3>
-              <p style="color: #666; font-size: 1.1rem; margin: 0.5rem 0 0; font-weight: 500;">Offer Percentage</p>
-            </div>
-            
-            <div class="summary-card" style="
-              background: white;
-              border-radius: 15px;
-              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-              padding: 2rem;
-              text-align: center;
-              min-width: 200px;
-              border-left: 5px solid #795548;
-            ">
-              <h3 style="color: #1a237e; font-size: 2rem; margin: 0; font-weight: 700;">₹9.6 LPA</h3>
-              <p style="color: #666; font-size: 1.1rem; margin: 0.5rem 0 0; font-weight: 500;">Average CTC</p>
-            </div>
-            
-            <div class="summary-card" style="
-              background: white;
-              border-radius: 15px;
-              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-              padding: 2rem;
-              text-align: center;
-              min-width: 200px;
-              border-left: 5px solid #607d8b;
-            ">
-              <h3 style="color: #1a237e; font-size: 2rem; margin: 0; font-weight: 700;">₹32.57 LPA</h3>
-              <p style="color: #666; font-size: 1.1rem; margin: 0.5rem 0 0; font-weight: 500;">Highest CTC</p>
-            </div>
-          </div>
-        </div> -->
-        <div class="table-caption">Placement Statistics for 2024-2025</div>
-
+        <p class="stats-table-note">*Excluding the students opted for Higher studies and Entrepreneurship</p>
       </div>
 
-      <div class="d-flex justify-content-around">
-        <div id="branch-wise" style="width:50%; height:400px;" class="text-center"></div>
-        <div id="degree-wise" style="width:50%; height:400px;" class="text-center"></div>
+      <div class="stats-card-panel">
+        <h2 class="stats-table-title">Percentage of Students Placed</h2>
+        <p class="stats-table-subtitle">Summary Overview (2025-2026)</p>
+
+        <div class="stats-table-wrapper" style="max-width: 600px; margin: 0 auto;">
+          <table class="stats-table summary-table">
+            <thead>
+              <tr>
+                <th scope="col">Details</th>
+                <th scope="col" style="text-align: center;">Numbers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>No. of students registered for the Placements</td>
+                <td class="num-val" style="text-align: center; font-weight: 600;">294</td>
+              </tr>
+              <tr>
+                <td>No. of students placed</td>
+                <td class="num-val" style="text-align: center; font-weight: 600;">199</td>
+              </tr>
+              <tr>
+                <td>No. of offers received</td>
+                <td class="num-val" style="text-align: center; font-weight: 600;">233</td>
+              </tr>
+              <tr style="background-color: var(--clr-accent-light);">
+                <td style="font-weight: 600; color: var(--clr-primary);">Overall Placement Percentage</td>
+                <td class="num-val" style="text-align: center; font-weight: 700; color: var(--clr-accent);">67.7%</td>
+              </tr>
+              <tr style="background-color: var(--clr-accent-light);">
+                <td style="font-weight: 600; color: var(--clr-primary);">Percentage of offers received</td>
+                <td class="num-val" style="text-align: center; font-weight: 700; color: var(--clr-accent);">78.9%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+
+      <div class="stats-card-panel">
+        <div class="charts-grid">
+          <div class="table-container-box">
+            <h3 class="mini-table-title">Branch-wise placement statistics for 2025-2026</h3>
+            <div class="stats-table-wrapper">
+              <table class="stats-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Branch</th>
+                    <th scope="col" style="text-align: right;">Offers</th>
+                    <th scope="col" style="text-align: right;">Average CTC (LPA)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Computer Science and Engineering</td>
+                    <td style="text-align: right;">73</td>
+                    <td style="text-align: right; font-family: 'Roboto Mono', monospace;">13.89</td>
+                  </tr>
+                  <tr>
+                    <td>Computer Science and Engineering (AI)</td>
+                    <td style="text-align: right;">41</td>
+                    <td style="text-align: right; font-family: 'Roboto Mono', monospace;">12.01</td>
+                  </tr>
+                  <tr>
+                    <td>Electronics and Communications Engineering</td>
+                    <td style="text-align: right;">30</td>
+                    <td style="text-align: right; font-family: 'Roboto Mono', monospace;">12.34</td>
+                  </tr>
+                  <tr>
+                    <td>Mechanical Engineering</td>
+                    <td style="text-align: right;">32</td>
+                    <td style="text-align: right; font-family: 'Roboto Mono', monospace;">8.60</td>
+                  </tr>
+                  <tr>
+                    <td>Smart Manufacturing</td>
+                    <td style="text-align: right;">29</td>
+                    <td style="text-align: right; font-family: 'Roboto Mono', monospace;">9.37</td>
+                  </tr>
+                  <tr>
+                    <td>M.Tech Programs</td>
+                    <td style="text-align: right;">24</td>
+                    <td style="text-align: right; font-family: 'Roboto Mono', monospace;">10.57</td>
+                  </tr>
+                  <tr>
+                    <td>M.Des</td>
+                    <td style="text-align: right;">4</td>
+                    <td style="text-align: right; font-family: 'Roboto Mono', monospace;">9.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="table-container-box">
+            <h3 class="mini-table-title">Course wise placement statistics for 2025-2026</h3>
+            <div class="stats-table-wrapper">
+              <table class="stats-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Course</th>
+                    <th scope="col" style="text-align: right;">Offers</th>
+                    <th scope="col" style="text-align: right;">Average CTC (LPA)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>B.Tech</td>
+                    <td style="text-align: right;">205</td>
+                    <td style="text-align: right; font-family: 'Roboto Mono', monospace;">11.81</td>
+                  </tr>
+                  <tr>
+                    <td>M.Tech</td>
+                    <td style="text-align: right;">24</td>
+                    <td style="text-align: right; font-family: 'Roboto Mono', monospace;">10.57</td>
+                  </tr>
+                  <tr>
+                    <td>M.Des</td>
+                    <td style="text-align: right;">4</td>
+                    <td style="text-align: right; font-family: 'Roboto Mono', monospace;">9.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Past Year Statistics (2023-24) -->
-
+    <!-- Past Year Statistics -->
     <div id="past-stats" class="stats-section" style="display: none;">
-      <!-- Add after the stats-overview section and before the branch-wise tables -->
-      <div class="yearly-stats-container" style="
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        padding: 2rem;
-        margin: 0 auto 4rem;
-        max-width: 1200px;
-        width: 95%;
-      ">
-        <div class="text-center mb-4" style="
-          color: #1a237e;
-          font-weight: 600;
-          font-family: 'Inter', sans-serif;
-          font-size: 2rem;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-        ">
-          Yearly Placement Statistics
-          <div style="
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #00ffe0, #1a237e);
-            margin: 1rem auto 0;
-            border-radius: 2px;">
-          </div>
-        </div>
-        <div id="placement-stats" style="width: 100%; height: 400px;"></div>
-      </div>
-
-      <div class="stats-overview">
-        <!-- Add the percentage section at the beginning with improved UI -->
-        <div class="text-center mb-5" style="
-          color: #1a237e;
-          font-weight: 600;
-          font-family: 'Inter', sans-serif;
-          font-style: normal;
-          font-size: 2.5rem;
-          padding: 25px;
-          margin: 30px auto;
-          border-bottom: 3px solid #00ffe0;
-          max-width: 80%;
-          text-transform: uppercase;
-          letter-spacing: 1.2px;
-          position: relative;
-        ">
-          Percentage of Students Placed
-          <div style="
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #00ffe0, #1a237e);
-            margin: 1.5rem auto 0;
-            border-radius: 2px;">
-          </div>
-        </div>
-
-        <div class="d-flex flex-column align-items-center justify-content-center mb-5">
-          <div class="table-container" style="
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-            overflow: hidden;
-            width: 75%;
-            max-width: 1000px;
-            margin: 0 auto;
-          ">
-            <table class="table mx-auto" id="my-table" style="margin: 0;">
-              <tr class="my-th" style="background: linear-gradient(90deg, #1a237e, #304ffe);">
-                <th scope="col" style="color: white; padding: 20px; font-size: 1.3rem; text-align: center;">Details</th>
-                <th scope="col" style="color: white; padding: 20px; font-size: 1.3rem; text-align: center;">Numbers</th>
-              </tr>
-              <tr class="table-row" style="transition: all 0.3s;">
-                <td style="padding: 25px; font-size: 1.2rem;">No. of students registered for the Placements</td>
-                <td style="padding: 25px; font-size: 1.2rem; font-weight: 500; text-align: center;">260</td>
-              </tr>
-              <tr class="table-row" style="transition: all 0.3s;">
-                <td style="padding: 25px; font-size: 1.2rem;">No. of students placed</td>
-                <td style="padding: 25px; font-size: 1.2rem; font-weight: 500; text-align: center;">161</td>
-              </tr>
-              <tr class="table-row" style="transition: all 0.3s;">
-                <td style="padding: 25px; font-size: 1.2rem;">No. of offers received</td>
-                <td style="padding: 25px; font-size: 1.2rem; font-weight: 500; text-align: center;">198</td>
-              </tr>
-              <tr class="table-row" style="transition: all 0.3s;">
-                <td style="padding: 25px; font-size: 1.2rem;">Overall Placement Percentage</td>
-                <td style="padding: 25px; font-size: 1.2rem; font-weight: 600; color: #1a237e; text-align: center;">61.9%</td>
-              </tr>
-              <tr class="table-row" style="transition: all 0.3s;">
-                <td style="padding: 25px; font-size: 1.2rem;">Percentage of offers received</td>
-                <td style="padding: 25px; font-size: 1.2rem; font-weight: 600; color: #1a237e; text-align: center;">76.2%</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex justify-content-around">
-        <div class="table-container">
-          <table class="table" id="my-table-2">
-            <thead>
-              <tr class="my-th">
-                <th scope="col">Branch</th>
-                <th scope="col">No. of Offers</th>
-                <th scope="col">Average CTC <br> (in LPA)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Computer Science and Engineering</td>
-                <td>64</td>
-                <td>9.86</td>
-              </tr>
-              <tr>
-                <td>Computer Science and Engineering (AI)</td>
-                <td>22</td>
-                <td>11.67</td>
-              </tr>
-              <tr>
-                <td>Electronics and Communications Engineering</td>
-                <td>46</td>
-                <td>10.74</td>
-              </tr>
-              <tr>
-                <td>Mechanical Engineering</td>
-                <td>31</td>
-                <td>6.47</td>
-              </tr>
-              <tr>
-                <td>Smart Manufacturing</td>
-                <td>13</td>
-                <td>6.91</td>
-              </tr>
-              <tr>
-                <td>M.Tech Programs</td>
-                <td>14</td>
-                <td>10.20</td>
-              </tr>
-              <tr>
-                <td>M.Des</td>
-                <td>8</td>
-                <td>6.59</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="table-caption">Branch-wise placement statistics for 2024-2025</div>
-        </div>
-        <div class="table-container">
-          <table class="table" id="my-table-2">
-            <thead>
-              <tr class="my-th">
-                <th scope="col">Course	</th>
-                <th scope="col">No. of Offers</th>
-                <th scope="col">Average CTC <br> (in LPA)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>B.Tech</td>
-                <td>176</td>
-                <td>9.42</td>
-              </tr>
-              <tr>
-                <td>M.Tech</td>
-                <td>14</td>
-                <td>10.20</td>
-              </tr>
-              <tr>
-                <td>M.Des</td>
-                <td>8</td>
-                <td>6.59</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="table-caption">Course wise placement statistics for 2024-2025</div>
-        </div>
-        
-
-        <!-- Table-2 -->
-        <!-- <div class="table-container">
-          <table class="table" id="my-table-2">
-            <thead>
-              <tr class="my-th">
-                <th scope="col">Course</th>
-                <th scope="col">No. of Offers</th>
-                <th scope="col">Average CTC (in LPA)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>B Tech</td>
-                <td>122</td>
-                <td>9.75</td>
-              </tr>
-              <tr>
-                <td>Dual Degree</td>
-                <td>63</td>
-                <td>17.36</td>
-              </tr>
-              <tr>
-                <td>M Tech</td>
-                <td>10</td>
-                <td>11.25</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="table-caption">Course wise placement statistics for 2023-2024</div>
-        </div> -->
-      </div>
-
-      <div class="d-flex justify-content-around">
-        <div id="branch-wise" style="width:50%; height:400px;" class="text-center"></div>
-        <div id="degree-wise" style="width:50%; height:400px;" class="text-center"></div>
+      <div class="stats-card-panel">
+        <h2 class="stats-table-title" style="margin-bottom: 24px;">Yearly Placement Statistics</h2>
+        <div id="placement-stats" style="width: 100%; height: 500px;"></div>
       </div>
     </div>
 
@@ -667,74 +313,7 @@
       <!-- Include jQuery -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
       <script src="/scripts/statistics.js"></script>
-      <script>
-        // for media screen
-        $(window).resize(function () {
-          if ($(window).width() < 500) {
-            $('#statistics_2024').css('height', '15rem')
-            $('#branch-wise').css('width', '450');
-            $('#branch-wise').css('height', 'auto');
-            $('#degree-wise').css('width', '450');
-            $('#title').css('paddingTop', '35%')
-            $('#box1').css('width', '25%')
-            $('#box1').css('paddingBottom', '5%')
-            $('#box2').css('width', '25%')
-            $('#box2').css('paddingBottom', '5%')
-            $('#box3').css('width', '25%')
-            
-            
-            // $('#x').css('overflow', 'visible')
-            // $('#box3').css('paddingBottom','5%')
-            // add class to $('.d-flex')
-            $('.d-flex').addClass('align-items-center');
-          }
-          else if ($(window).width() < 360) {
-            $('#statistics_2024').css('height', '13rem')
-            $('#branch-wise').css('width', '450');
-            $('#branch-wise').css('height', 'auto');
-            $('#degree-wise').css('width', '450');
-            $('#title').css('paddingTop', '35%')
-            $('#box1').css('width', '25%')
-            $('#box1').css('paddingBottom', '5%')
-            $('#box2').css('width', '25%')
-            $('#box2').css('paddingBottom', '5%')
-            $('#box3').css('width', '25%')
-            
-            
-            // $('#x').css('overflow', 'visible')
-            // $('#box3').css('paddingBottom','5%')
-            // add class to $('.d-flex')
-            $('.d-flex').addClass('align-items-center');
-          }
-          else if ($(window).width() < 770) {
-            console.log("mobile");
-            $('#branch-wise').css('width', '450');
-            $('#branch-wise').css('height', 'auto');
-            $('#degree-wise').css('width', '450');
-            $('#title').css('paddingTop', '35%')
-            $('#box1').css('width', '25%')
-            $('#box1').css('paddingBottom', '5%')
-            $('#box2').css('width', '25%')
-            $('#box2').css('paddingBottom', '5%')
-            $('#box3').css('width', '25%')
-            
-            
-            // $('#x').css('overflow', 'visible')
-            // $('#box3').css('paddingBottom','5%')
-            // add class to $('.d-flex')
-            $('.d-flex').addClass('align-items-center');
-          } 
-          else {
-            console.log("desktop");
-            $('#branch-wise').css('width', '500px');
-            $('#degree-wise').css('width', 'auto');
-            $('#title').css('paddingTop', '13%');
-            $('.x').css('paddingRight', '25%');
-            // remove class to $('.d-flex')
-            $('.d-flex').removeClass('align-items-center');
-          }
-        }).resize();
-      </script>
+
       <!-- Js snippet for animation of progress-bars stats -->
       <script>
         window.onload = () => {
@@ -744,7 +323,7 @@
 
           circles.forEach((outerElement, index) => {
             const innerTextElement = outerElement.querySelector(".inner-text");
-            const targetPercentages = [61.13 ,65.5, 97]; // Target percentages
+            const targetPercentages = [67.7, 65.5, 97]; // Target percentages (updated 2025-26, 2022-23, 2021-22)
             const stepDuration = animationDuration / animationSteps;
 
             for (let i = 0; i <= animationSteps; i++) {
@@ -770,32 +349,38 @@
         };
       </script>
 
-    <!-- Add this JavaScript before the closing body tag -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggle = document.getElementById('stats-toggle');
-      const currentStats = document.getElementById('current-stats');
-      const pastStats = document.getElementById('past-stats');
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const toggle = document.getElementById('stats-toggle');
+          const currentStats = document.getElementById('current-stats');
+          const pastStats = document.getElementById('past-stats');
 
-      toggle.addEventListener('change', function() {
-        if (this.checked) {
-          currentStats.style.display = 'none';
-          pastStats.style.display = 'block';
-          setTimeout(() => {
-            pastStats.style.opacity = '1';
-          }, 50);
-          currentStats.style.opacity = '0';
-        } else {
-          pastStats.style.display = 'none';
-          currentStats.style.display = 'block';
-          setTimeout(() => {
-            currentStats.style.opacity = '1';
-          }, 50);
-          pastStats.style.opacity = '0';
-        }
-      });
-    });
-    </script>
+          toggle.addEventListener('change', function () {
+            if (this.checked) {
+              currentStats.style.display = 'none';
+              pastStats.style.display = 'block';
+              setTimeout(() => {
+                pastStats.style.opacity = '1';
+                // Redraw charts now that the container is visible and has real dimensions
+                if (typeof drawPlacementStats === 'function') drawPlacementStats();
+                if (typeof drawChart === 'function') drawChart();
+                if (typeof drawMyChart === 'function') drawMyChart();
+              }, 100);
+              currentStats.style.opacity = '0';
+            } else {
+              pastStats.style.display = 'none';
+              currentStats.style.display = 'block';
+              setTimeout(() => {
+                currentStats.style.opacity = '1';
+                // Redraw current stats charts
+                if (typeof drawChart === 'function') drawChart();
+                if (typeof drawMyChart === 'function') drawMyChart();
+              }, 100);
+              pastStats.style.opacity = '0';
+            }
+          });
+        });
+      </script>
 
 </body>
 

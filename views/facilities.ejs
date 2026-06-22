@@ -14,108 +14,126 @@
 
 <body>
     <%- include('templates/header-1.ejs') -%>
-        <div class="topImage">
-            <span class="topImageTitle">Facilities</span>
-        </div>
-        <div class="custom-container">
-            <div class="custom-container-section">
-                <div class="section-description">
-                    The placement office is fully equipped to efficiently support all stages of the recruitment procedure. Our staff will handle all arrangements for interviews, group discussions, and pre-placement talks. We have various well-equipped facilities to facilitate these processes, including:
+        <header class="facilities-header reveal">
+            <h1 class="facilities-page-title">Facilities</h1>
+        </header>
+        <section class="facilities-section">
+            <div class="section-wrapper">
+                <div class="facilities-intro reveal">
+                    <p>The placement office is fully equipped to efficiently support all stages of the recruitment procedure. Our staff will handle all arrangements for interviews, group discussions, and pre-placement talks. We have various well-equipped facilities to facilitate these processes, including:</p>
                 </div>
-            </div>
-          
-            <div class="grid-container">
-                <div class="grid-child purple" style="padding-inline-start:5%;">
-                    <div class="prog">
-                        <button class="btn btn-primary my-btn active" id="btn-1" style="color:black;font-size:1.2rem; font-family: Inter;
-                        font-style: normal;">Smart class-rooms</button>
-                        <button class="btn btn-primary my-btn" id="btn-2" style="color:black;font-size:1.2rem; font-family: Inter;
-                        font-style: normal;">Interview rooms and Group discussions halls</button>
-                        <button class="btn btn-primary my-btn" id="btn-3" style="color:black;font-size:1.2rem; font-family: Inter;
-                        font-style: normal;">Computer labs</button>
-                        <button class="btn btn-primary my-btn" id="btn-4" style="color:black;font-size:1.2rem; font-family: Inter;
-                        font-style: normal;">Student placement volunteers</button>
-                        <button class="btn btn-primary my-btn" id="btn-5" style="color:black;font-size:1.2rem; font-family: Inter;
-                        font-style: normal;">Video conferencing facilities</button>
+              
+                <div class="facilities-grid reveal">
+                    <!-- Left: Navigation Sidebar -->
+                    <div class="facilities-nav">
+                        <div class="prog">
+                            <button class="nav-tab-btn active" id="btn-1">
+                                <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                                <span>Smart class-rooms</span>
+                            </button>
+                            <button class="nav-tab-btn" id="btn-2">
+                                <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                                <span>Interview & GD halls</span>
+                            </button>
+                            <button class="nav-tab-btn" id="btn-3">
+                                <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                <span>Computer labs</span>
+                            </button>
+                            <button class="nav-tab-btn" id="btn-4">
+                                <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <span>Placement volunteers</span>
+                            </button>
+                            <button class="nav-tab-btn" id="btn-5">
+                                <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M23 7a2 2 0 0 0-2.45-1.45L16 7V5a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2l4.55 1.45A2 2 0 0 0 23 17V7z"></path>
+                                </svg>
+                                <span>Video conferencing</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Display Area -->
+                    <div class="facilities-display-area">
+                        <div class="facility-card-wrapper">
+                            <div class="facility-card" id="box-1" style="display: flex;">
+                                <div class="facility-image-container">
+                                    <img class="facility-image" src="/img/facilities/smart_classroom.jpg" alt="Smart class-rooms" loading="lazy">
+                                </div>
+                                <div class="facility-content">
+                                    <h2 class="facility-title">Smart class-rooms</h2>
+                                    <p class="facility-text">Our smart lecture halls come with the best technology and provide a conducive atmosphere for dynamic and focused discussions between the speakers and the audience.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="facility-card-wrapper">
+                            <div class="facility-card" id="box-2" style="display: none;">
+                                <div class="facility-image-container">
+                                    <img class="facility-image" src="/img/facilities/2.jpeg" alt="Interview rooms and GD halls" loading="lazy">
+                                </div>
+                                <div class="facility-content">
+                                    <h2 class="facility-title">Interview rooms and Group discussions halls</h2>
+                                    <p class="facility-text">A very minimalistic yet expansive looking space for conducting interviews, group discussions, pre-placement talks, and other assessment processes with absolute comfort and privacy.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="facility-card-wrapper">
+                            <div class="facility-card" id="box-3" style="display: none;">
+                                <div class="facility-image-container">
+                                    <img class="facility-image" src="/img/facilities/computer_lab.jpg" alt="Computer labs" loading="lazy">
+                                </div>
+                                <div class="facility-content">
+                                    <h2 class="facility-title">Computer labs</h2>
+                                    <p class="facility-text">The college has high-tech all-in-one computer systems enabled with extremely fast internet access through LAN and WiFi (>100 Mbps). These systems are equipped with cutting-edge hardware configurations and connected to a central server.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="facility-card-wrapper">
+                            <div class="facility-card" id="box-4" style="display: none;">
+                                <div class="facility-image-container">
+                                    <img class="facility-image" src="/img/facilities/team.jpg" alt="Student placement volunteers" loading="lazy">
+                                </div>
+                                <div class="facility-content">
+                                    <h2 class="facility-title">Student placement volunteers</h2>
+                                    <p class="facility-text">Our dedicated student placement volunteers are trained and available to assist on the day of the visit and guide candidates through the entire selection and evaluation process seamlessly.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="facility-card-wrapper">
+                            <div class="facility-card" id="box-5" style="display: none;">
+                                <div class="facility-image-container">
+                                    <img class="facility-image" src="/img/facilities/1.jpeg" alt="Video conferencing facilities" loading="lazy">
+                                </div>
+                                <div class="facility-content">
+                                    <h2 class="facility-title">Video conferencing facilities</h2>
+                                    <p class="facility-text">State-of-the-art video conferencing rooms equipped with high-definition audio and visual gear are available for virtual interviews, online meetings, and remote recruitment sessions.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="grid-child green" style="padding-top: 1.5rem; padding-right:10%;">
-                    <div class="custom-container-section">
-                        <div class="section-box" id="box-1" style="display: flex; border-radius: 3%;">
-                            <div>
-                                <img class="section-box-item section-custom-img" style=" border-radius: 10%; overflow:hidden;"
-                                    src="img/projector.JPG"
-                                    alt="office">
-                            </div>
-                            <div class="section-box-item section-custom-para">
-                                <h2>Smart class-rooms</h2>
-                                <p style="color:black;font-size:1.35rem; font-family: Inter;font-style: normal;">Our smart lecture halls come with the best technology and provide a conducive
-                                    atmosphere
-                                    for
-                                    dynamic and focused discussions between the speakers and the audience.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="custom-container-section">
-                        <div class="section-box" id="box-2" style="display: none; border-radius: 3%;">
-                            <div class="section-box-item section-custom-para2">
-                                <h2>Interview rooms and Group discussions halls</h2>
-                                <p style="color:black;font-size:1.35rem; font-family: Inter;font-style: normal;">A very minimalistic yet expansive looking space for conducting interviews, group
-                                    discussions,
-                                    pre-placement talks etc.
-                                </p>
-                            </div>
-                            <img class="section-box-item section-custom-img" style="border-radius: 10%;"
-                                src="https://drive.google.com/thumbnail?id=1fHFQJdTKe9BqJBvRVioHwn9j24sJUWoS" alt="room"
-                                srcset="">
-                        </div>
-                    </div>
-
-                    <div class="custom-container-section">
-                        <div class="section-box " id="box-3" style="display: none; border-radius: 3%;">
-                            <img class="section-box-item section-custom-img"  style="  border-radius: 10%;" src="/img/facilities/computer_lab.jpg"
-                                alt="office">
-                            <div class="section-box-item section-custom-para">
-                                <h2>Computer labs</h2>
-                                <p style="color:black;font-size:1.35rem; font-family: Inter;font-style: normal;">The college has high-tech all-in-one computer systems enabled with extremely fast
-                                    internet access
-                                    through LAN and WiFi (>100 Mbps). These systems are equipped with the cutting edge
-                                    hardware
-                                    configurations and are connected to a central server.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="custom-container-section">
-                        <div class="section-box" id="box-4" style="display: none; border-radius: 3%;">
-                            <div class="section-box-item section-custom-para1">
-                                <h2>Student placement volunteers</h2>
-                                <p style="color:black;font-size:1.35rem; font-family: Inter;font-style: normal;">Student placement volunteers to assist on the day of visit and through the selection
-                                    process</p>
-                            </div>
-                            <img class="section-box-item section-custom-img"  style="  border-radius: 10%;"
-                                src="img/volunteers.png"
-                                alt="volunteers" srcset="">
-                        </div>
-                    </div>
-
-                    <div class="custom-container-section">
-                        <div class="section-box" id="box-5" style="display: none; border-radius: 3%;">
-                            <img class="section-box-item section-custom-img"  style="  border-radius: 10%;"
-                                src="https://drive.google.com/thumbnail?id=18-xphkMSE6ARRNJR5k91wAjLt01xTN9l"
-                                alt="office">
-                            <div class="section-box-item section-custom-para">
-                                <h2>Video conferencing facilities</h2>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                
                 <script src="scripts/facilities.js"></script>
             </div>
+        </section>
            
 
                 <%- include('templates/footer-1.ejs') -%>

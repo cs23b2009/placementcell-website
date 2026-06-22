@@ -3,355 +3,214 @@
 
 <head>
   <meta charset="UTF-8" />
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-  <title>DevTeam</title>
-  <link rel="stylesheet" href="/css/contactUs.css" />
-  <!-- <link rel="stylesheet" href="/css/aos.css"> -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Developers | IIITDM Kancheepuram</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f6fb;
+      color: #1a1a2e;
+    }
+
+    /* ── Page hero banner ── */
+    .contact-hero {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1565c0 100%);
+      padding: 70px 20px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 300px;
+      height: 300px;
+      background: rgba(0, 255, 224, 0.08);
+      border-radius: 50%;
+    }
+
+    .contact-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -40px;
+      width: 250px;
+      height: 250px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 50%;
+    }
+
+    .contact-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-hero p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.05rem;
+      margin-top: 0.5rem;
+    }
+
+    .hero-accent {
+      display: inline-block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #00ffe0, #304ffe);
+      border-radius: 2px;
+      margin: 1rem auto 0;
+    }
+
+    /* ── Section wrapper ── */
+    .team-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    /* ── Card grid ── */
+    .cards-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-student {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 3px 16px rgba(26, 35, 126, 0.08);
+      overflow: hidden;
+      width: 240px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card-student:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(26, 35, 126, 0.13);
+    }
+
+    .card-student .card-top-bar {
+      height: 4px;
+      background: linear-gradient(90deg, #00ffe0, #1a237e);
+    }
+
+    .card-student .card-img-wrap {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin: 24px auto 16px;
+      overflow: hidden;
+      border: 3px solid #e8eaf6;
+      background: #f0f2ff;
+    }
+
+    .card-student .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-student .card-body {
+      padding: 0 16px 24px;
+      text-align: center;
+    }
+
+    .card-student .card-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a237e;
+      line-height: 1.3;
+    }
+
+    .card-student .card-post {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #3949ab;
+      background: #e8eaf6;
+      border-radius: 20px;
+      padding: 4px 14px;
+    }
+
+    .card-student .card-contact {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .card-student .card-contact a {
+      font-size: 0.75rem;
+      color: #757575;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+
+    .card-student .card-contact a:hover {
+      color: #1a237e;
+    }
+
+    .card-student .card-contact i {
+      color: #7986cb;
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 
-<body class="devteam-bg">
+<body>
   <%- include('templates/header-1.ejs') -%>
 
-    <header class="ml-5 pt-5">
-      <h1 class="font-weight-dark">Our Developers</h1>
-    </header>
-    <section class="team mt-5">
-      <div class="row no-gutters">
-        <div class="text-center">
-          <div class="box">
-            <div class="avtar">
-              <img class="img-fluid" src="/img/coordinators/id21m1007.jpeg" />
-            </div>
-            <div class="box-content">
-              <h5 class="title">Vaishnavi D R</h5>
-              <span class="post">M.Des</span>
-            </div>
-            <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-            <a href="mailto:id21m1007@iiitdm.ac.in" class="mail-margin">id21m1007@iiitdm.ac.in</a>
-            <!-- <a href="#">+91 75686 12211</a> -->
-            <!-- <ul class="icons">
-              <li>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-linkedin-square"></i></a>
-              </li>
-            </ul> -->
-          </div>
-        </div>
+    <!-- Hero Banner -->
+    <div class="contact-hero">
+      <h1>Our Developers</h1>
+      <p>IIITDM Kancheepuram — Placement Cell Web Team</p>
+      <div class="hero-accent"></div>
+    </div>
 
-        <div class="  text-center">
-          <div class="box">
-              <div class="avtar">
-                  <img class="img-fluid" src="/img/coordinators/coe19b043.png">
-              </div>
-              <div class="box-content">
-                  <h5 class="title">Stanley </h5>
-                  <span class="post">CSE</span>
-              </div>
-              <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-              <a href="mailto:coe19b043@iiitdm.ac.in" class="mail-margin">coe19b043@iiitdm.ac.in</a>
-              <ul class="icons">
-                  <!-- <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> +91 78930 62389</a></li> -->
-                  <!-- <li><a style="font-size: 25px;" href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li> -->
-              
-              </ul>
-
+    <!-- Developers Section -->
+    <div class="team-section">
+      <div class="cards-grid">
+        <!-- Card 1: D IndraKumar -->
+        <div class="card-student">
+          <div class="card-top-bar"></div>
+          <div class="card-img-wrap">
+            <img src="/img/coordinators_2026/indra.png" alt="D IndraKumar"
+              onerror="this.src='/img/coordinators_2026/image.png'">
           </div>
-      </div>
-      <div class="text-center">
-        <div class="box">
-          <div class="avtar">
-            <img class="img-fluid" src="/img/devteam/cs21b1033.jpg" />
-          </div>
-          <div class="box-content">
-            <h5 class="title">Haran Ritvick Vemula</h5>
-            <span class="post">CSE</span>
-          </div>
-          <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-          <a href="mailto:cs21b1033@iiitdm.ac.in" class="mail-margin">cs21b1033@iiitdm.ac.in</a>
-          <!-- <a href="#">+91 77778 77666</a> -->
-          <!-- <ul class="icons">
-            <li>
-              <a href="#"><i class="fa fa-instagram"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-linkedin-square"></i></a>
-            </li> -->
-          </ul>
-        </div>
-      </div>
-        <div class="text-center">
-          <div class="box">
-            <div class="avtar">
-              <img class="img-fluid" src="/img/devteam/cs20b1075.jpeg" />
+          <div class="card-body">
+            <h3 class="card-name">D IndraKumar</h3>
+            <div class="card-contact">
+              <a href="mailto:cs23b2009@iiitdm.ac.in">
+                <i class="fa fa-envelope" aria-hidden="true"></i> cs23b2009@iiitdm.ac.in
+              </a>
             </div>
-            <div class="box-content">
-              <h5 class="title">CH Jitin Krishna</h5>
-              <span class="post">CSE</span>
-            </div>
-            <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-            <a href="mailto:cs20b1075@iiitdm.ac.in" class="mail-margin">cs20b1075@iiitdm.ac.in</a>
-            <!-- <a href="#">+91 81309 83105</a> -->
-            <!-- <ul class="icons">
-              <li>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-linkedin-square"></i></a>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-        <div class="text-center">
-          <div class="box">
-            <div class="avtar">
-              <img class="img-fluid" src="/img/devteam/cs20b1119.jpeg" />
-            </div>
-            <div class="box-content">
-              <h5 class="title">Dheeraj</h5>
-              <span class="post">CSE</span>
-            </div>
-            <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-            <a href="mailto:cs20b1119@iiitdm.ac.in" class="mail-margin">cs20b1119@iiitdm.ac.in</a>
-            <!-- <a href="#">+91 81309 83105</a> -->
-            <!-- <ul class="icons">
-              <li>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-linkedin-square"></i></a>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-
-        <div class="text-center">
-          <div class="box">
-            <div class="avtar">
-              <img class="img-fluid" src="/img/devteam/cs20b1001.jpeg" />
-            </div>
-            <div class="box-content">
-              <h5 class="title">A Lahari</h5>
-              <span class="post">CSE</span>
-            </div>
-            <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-            <a href="mailto:cs20b1001@iiitdm.ac.in" class="mail-margin">cs20b1001@iiitdm.ac.in</a>
-            <!-- <a href="#">+91 81309 83105</a> -->
-            <!-- <ul class="icons">
-              <li>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-linkedin-square"></i></a>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-        <div class="text-center">
-          <div class="box">
-            <div class="avtar">
-              <img class="img-fluid" src="/img/devteam/cs20b1091.jpeg" />
-            </div>
-            <div class="box-content">
-              <h5 class="title">B Mahidhar Reddy</h5>
-              <span class="post">CSE</span>
-            </div>
-            <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-            <a href="mailto:cs20b1091@iiitdm.ac.in" class="mail-margin">cs20b1091@iiitdm.ac.in</a>
-            <!-- <a href="#">+91 81309 83105</a> -->
-            <!-- <ul class="icons">
-              <li>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-linkedin-square"></i></a>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-        <div class="text-center">
-          <div class="box">
-            <div class="avtar">
-              <img class="img-fluid" src="/img/devteam/cs20b1065.jpeg" />
-            </div>
-            <div class="box-content">
-              <h5 class="title">J Sai Rushik</h5>
-              <span class="post">CSE</span>
-            </div>
-            <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-            <a href="mailto:cs20b1065@iiitdm.ac.in" class="mail-margin">cs20b1065@iiitdm.ac.in</a>
-            <!-- <a href="#">+91 77086 08937</a> -->
-            <!-- <ul class="icons">
-              <li>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-linkedin-square"></i></a>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-        <div class="text-center">
-          <div class="box">
-            <div class="avtar">
-              <img class="img-fluid" src="/img/devteam/cs20b1128.png" />
-            </div>
-            <div class="box-content">
-              <h5 class="title">OVS Lokesh Reddy</h5>
-              <span class="post">CSE</span>
-            </div>
-            <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-            <a href="mailto:cs20b1128@iiitdm.ac.in" class="mail-margin">cs20b1128@iiitdm.ac.in</a>
-            <!-- <a href="#">+91 91766 77701</a> -->
-            <!-- <ul class="icons">
-              <li>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-linkedin-square"></i></a>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-        <div class="text-center">
-          <div class="box">
-            <div class="avtar">
-              <img class="img-fluid" src="/img/devteam/cs20b1130.jpeg" />
-            </div>
-            <div class="box-content">
-              <h5 class="title">G Praneeth Kumar</h5>
-              <span class="post">CSE</span>
-            </div>
-            <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-            <a href="mailto:cs20b1130@iiitdm.ac.in" class="mail-margin">cs20b1130@iiitdm.ac.in</a>
-            <!-- <a href="#">+91 91766 77701</a> -->
-            <!-- <ul class="icons">
-              <li>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-linkedin-square"></i></a>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-        <div class="text-center">
-          <div class="box">
-            <div class="avtar">
-              <img class="img-fluid" src="/img/devteam/cs20b1070.jpeg" />
-            </div>
-            <div class="box-content">
-              <h5 class="title">Jagannath</h5>
-              <span class="post">CSE</span>
-            </div>
-            <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-            <a href="mailto:cs20b1070@iiitdm.ac.in" class="mail-margin">cs20b1070@iiitdm.ac.in</a>
-            <!-- <a href="#">+91 63699 96933</a> -->
-            <!-- <ul class="icons">
-              <li>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-linkedin-square"></i></a>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-        <div class="text-center">
-          <div class="box">
-            <div class="avtar">
-              <img class="img-fluid" src="/img/devteam/cs20b1069.jpeg" />
-            </div>
-            <div class="box-content">
-              <h5 class="title">Abhiram</h5>
-              <span class="post">CSE</span>
-            </div>
-            <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-            <a href="mailto:cs20b1069@iiitdm.ac.in" class="mail-margin">cs20b1069@iiitdm.ac.in</a>
-            <!-- <a href="#">+91 9502432078</a> -->
-            <!-- <ul class="icons">
-              <li>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-linkedin-square"></i></a>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-        <div class="text-center">
-          <div class="box">
-            <div class="avtar">
-              <img class="img-fluid" src="/img/devteam/cs20b1036.jpeg" />
-            </div>
-            <div class="box-content">
-              <h5 class="title">Gowtham Tupili</h5>
-              <span class="post">CSE</span>
-            </div>
-            <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-            <a href="mailto:cs20b1036@iiitdm.ac.in" class="mail-margin">cs20b1036@iiitdm.ac.in</a>
-            <!-- <a href="#">+91 9502432078</a> -->
-            <!-- <ul class="icons">
-              <li>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-linkedin-square"></i></a>
-              </li> -->
-            </ul>
           </div>
         </div>
       </div>
-      <div class="gapGiver">
+    </div>
 
-      </div>
-    </section>
     <%- include('templates/footer-1.ejs') -%>
-      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script> -->
 </body>
 
 </html>
