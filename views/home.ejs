@@ -42,7 +42,7 @@
             </video>
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <img src="/img/icons/logo1.png" alt="IIITDM Logo" class="hero-logo">
+                <img src="/img/icons/logo1.png" alt="IIITDM Logo" class="hero-logo" style="width:130px;height:130px;">
                 <h1 class="hero-title">
                     Training & Placement Cell<br>
                     <span>IIITDM Kancheepuram</span>
@@ -68,8 +68,7 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </a>
-                    <a href="/Placement Brochure.pdf"
-                        target="_blank" class="button">
+                    <a href="/Placement Brochure.pdf" target="_blank" class="button">
                         Brochure
                         <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                             <path fill-rule="evenodd"
@@ -164,7 +163,7 @@
                             </svg>
                         </button>
                         <div class="director-signature">
-                            <div class="director-name">— <a href="https://www.mvkartikeyan.com/" target="_blank">Prof. M
+                            <div class="director-name"> <a href="https://www.mvkartikeyan.com/" target="_blank">Prof. M
                                     V Kartikeyan</a></div>
                             <div class="director-role">Director, IIITDM Kancheepuram</div>
                         </div>
@@ -278,17 +277,14 @@
                     </div>
 
                     <div class="hl-companies-grid">
-                        <% const placements=[ { company: "D. E. Shaw" , count: "1 Student" , stripe: "blue" ,
-                            logo: "logo_0.png" }, { company: "Cisco" , count: "1 Student" , stripe: "cyan" ,
-                            logo: "logo_1.png" }, { company: "Oracle" , count: "10 Students" , stripe: "red" ,
-                            logo: "logo_2.png" }, { company: "JPMorgan Chase & Co." , count: "4 Students" ,
-                            stripe: "navy" , logo: "logo_3.png" }, { company: "Increff" , count: "3 Students" ,
-                            stripe: "purple" , logo: "logo_4.png" }, { company: "BigVision" , count: "5 Students" ,
-                            stripe: "blue" , logo: "logo_5.png" }, { company: "HSBC" , count: "5 Students" ,
-                            stripe: "red" , logo: "logo_6.png" }, { company: "Plum Benefits" , count: "3 Students" ,
-                            stripe: "purple" , logo: "logo_7.png" }, { company: "Accenture" , count: "15 Students" ,
-                            stripe: "purple" , logo: "logo_8.png" }, { company: "Quantrium" , count: "14 Students" ,
-                            stripe: "blue" , logo: "logo_9.png" } ]; %>
+                        <% const placements=[ { company: "D. E. Shaw" , stripe: "blue" , logo: "logo_0.png" }, {
+                            company: "Cisco" , stripe: "cyan" , logo: "logo_1.png" }, { company: "Oracle" ,
+                            stripe: "red" , logo: "logo_2.png" }, { company: "JPMorgan Chase & Co." , stripe: "navy" ,
+                            logo: "logo_3.png" }, { company: "Increff" , stripe: "purple" , logo: "logo_4.png" }, {
+                            company: "BigVision" , stripe: "blue" , logo: "logo_5.png" }, { company: "HSBC" ,
+                            stripe: "red" , logo: "logo_6.png" }, { company: "Plum Benefits" , stripe: "purple" ,
+                            logo: "logo_7.png" }, { company: "Accenture" , stripe: "purple" , logo: "logo_8.png" }, {
+                            company: "Quantrium" , stripe: "blue" , logo: "logo_9.png" } ]; %>
                             <% placements.forEach(function(p) { %>
                                 <div class="hl-company-card">
                                     <img src="img/recent_placements/<%= p.logo %>" alt="<%= p.company %> logo"
@@ -296,9 +292,6 @@
                                     <div class="hl-company-info">
                                         <div class="hl-company-title">
                                             <%= p.company %>
-                                        </div>
-                                        <div class="hl-company-students">
-                                            <%= p.count %>
                                         </div>
                                     </div>
                                 </div>
@@ -314,8 +307,7 @@
         <section class="recruiters-section" id="recruiters">
             <div class="section-wrapper">
                 <div class="section-header reveal">
-                    <span class="section-label">Our Network</span>
-                    <h2 class="section-title">Past Recruiters</h2>
+                    <h2 class="section-title">Our Esteemed Recruiters</h2>
                     <hr class="section-divider">
                 </div>
 

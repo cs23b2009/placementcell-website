@@ -99,10 +99,10 @@ google.charts.setOnLoadCallback(drawPlacementStats);
 function drawPlacementStats() {
   var data = google.visualization.arrayToDataTable([
     ['Year', 'Placement Percentage', { role: 'style' }],
-    ['2022-2023', 65.5, '#304ffe'],
-    ['2023-2024', 61.9, '#00ffe0'],
-    ['2024-2025', 63, '#1a237e'],
-    ['2025-2026', 67.7, '#3b82f6'],
+    ['2022-2023', 65.5, 'color: #3b82f6'],
+    ['2023-2024', 61.9, 'color: #3b82f6'],
+    ['2024-2025', 63,   'color: #3b82f6'],
+    ['2025-2026', 67.7, 'color: #3b82f6'],
   ]);
 
   var options = {
@@ -120,8 +120,8 @@ function drawPlacementStats() {
     vAxis: {
       title: 'Placement Percentage',
       titleTextStyle: { fontName: 'Inter', fontSize: 12, italic: false, color: '#475569' },
-      minValue: 0,
-      maxValue: 100,
+      minValue: 50,
+      maxValue: 75,
       format: '#\'%\'',
       textStyle: { fontName: 'Inter', fontSize: 11, color: '#64748b' },
       gridlines: { color: '#f1f5f9' },
