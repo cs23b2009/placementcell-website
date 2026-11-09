@@ -10,8 +10,6 @@ body {
 .site-footer span {
     font-style: normal !important;
     font-family: "Inter", sans-serif !important;
-    font-size: inherit;
-    font-weight: inherit;
 }
 
 .top-navbar li,
@@ -145,15 +143,20 @@ body {
     color: var(--text-dark) !important;
     font-size: 13.5px;
     font-weight: 500;
-    padding: 8px 14px;
+    line-height: 1;
+    height: 36px;
+    padding: 0 12px;
     text-decoration: none !important;
-    transition: all 0.25s ease;
+    transition: all 0.2s ease;
     border-radius: 6px;
     position: relative;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
 .top-navbar-item-link:hover,
@@ -166,13 +169,14 @@ body {
 .top-navbar-item-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: 2px;
     left: 50%;
     width: 0;
     height: 2px;
     background: var(--accent-cyan);
     transition: all 0.25s ease;
     transform: translateX(-50%);
+    border-radius: 2px;
 }
 
 .top-navbar-item-link:hover::after {
@@ -184,11 +188,19 @@ body {
     border: 1.5px solid var(--accent-blue);
     color: var(--accent-blue) !important;
     background: transparent;
-    font-weight: 600;
-    padding: 6px 18px;
-    border-radius: 30px;
-    transition: all 0.25s ease;
+    font-size: 13.5px;
+    font-weight: 500;
+    line-height: 1;
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
     box-shadow: none;
+    margin-left: 2px;
 }
 
 .top-navbar-item-link.highlight-link:hover {
@@ -205,6 +217,8 @@ body {
 /* ==================== Dropdown Navigation Menu ==================== */
 .top-navbar-item-link-dd {
     position: relative;
+    display: inline-flex;
+    align-items: center;
 }
 
 .top-navbar-item-link-dd-content {
@@ -258,6 +272,9 @@ body {
     font-size: 9px;
     color: var(--text-muted);
     transition: transform 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 2px;
 }
 
 .top-navbar-item-link-dd:hover .dd-chevron {

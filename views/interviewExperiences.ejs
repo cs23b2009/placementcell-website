@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interview experiences shared by students of IIITDM Kancheepuram. Prepare better for your upcoming interviews with insights from previous candidates.">
+    <link rel="icon" href="/img/icons/logo.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/templates-1.css">
+    <link rel="stylesheet" href="/css/interviewExperiences.css">
+    <title>Interview Experiences | Placement Cell | IIITDM Kancheepuram</title>
+</head>
+<body>
+    <%- include('templates/header-1.ejs') -%>
+
+    <!-- Page Hero Banner -->
+    <section class="ie-hero">
+        <div class="ie-hero-overlay"></div>
+        <div class="ie-hero-content">
+            <h1 class="ie-hero-title">Interview Experiences</h1>
+            <p class="ie-hero-sub">Learn from the interview experiences shared by our students and prepare better for your next opportunity.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="ie-bg-alt">
+        <section class="ie-wrapper">
+
+            <!-- Section Header -->
+            <div class="ie-section-header">
+                <span class="ie-label">Student Voices</span>
+                <h2 class="ie-title">Company-wise Interview Experiences</h2>
+                <hr class="ie-divider">
+                <p class="ie-intro-text">
+                    Read first-hand accounts of interview processes from students who have been through them.
+                    Each experience covers the rounds, questions asked, and tips for future candidates.
+                </p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="ie-search-container">
+                <i class="fa fa-search ie-search-icon"></i>
+                <input type="text" id="ie-search" class="ie-search-box" placeholder="Search companies..." autocomplete="off">
+            </div>
+
+            <!-- Companies Grid -->
+            <div id="ie-companies-grid" class="ie-companies-grid">
+                <% companies.forEach(function(company) { %>
+                <a href="/interview-experiences/<%= company.id %>" class="ie-company-card"
+                   data-name="<%= company.name.toLowerCase() %>"
+                   data-desc="<%= company.description.toLowerCase() %>">
+                    <div class="ie-company-card-inner">
+                        <% if (company.logo) { %>
+                        <img src="<%= company.logo %>" alt="<%= company.name %> Logo" class="ie-company-logo"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="ie-company-logo-placeholder" style="display:none;">
+                            <%= company.name.charAt(0) %>
+                        </div>
+                        <% } else { %>
+                        <div class="ie-company-logo-placeholder">
+                            <%= company.name.charAt(0) %>
+                        </div>
+                        <% } %>
+                        <h3 class="ie-company-name"><%= company.name %></h3>
+                        <p class="ie-company-desc"><%= company.description %></p>
+                        <div class="ie-company-meta">
+                            <i class="fa fa-file-text-o"></i>
+                            <span><%= company.experiencesCount %> Interview <%= company.experiencesCount === 1 ? 'Experience' : 'Experiences' %></span>
+                        </div>
+                        <span class="ie-company-cta">View Experiences <i class="fa fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <% }); %>
+            </div>
+
+            <!-- Empty State -->
+            <div id="ie-empty-state" class="ie-empty-state" style="display: none;">
+                <div class="ie-empty-icon">
+                    <i class="fa fa-search"></i>
+                </div>
+                <h3 class="ie-empty-title">No companies found</h3>
+                <p class="ie-empty-text">Try searching with a different keyword or browse all available companies.</p>
+            </div>
+
+        </section>
+    </div>
+
+    <%- include('templates/footer-1.ejs') -%>
+    <script src="/scripts/interviewExperiences.js"></script>
+</body>
+</html>

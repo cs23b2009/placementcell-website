@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="PRAGNA 2026 Event Showcase - IIITDM Kancheepuram"
+    />
+    <link rel="icon" href="/img/icons/logo.jpg" type="image/jpeg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/css/templates-1.css" />
+    <link rel="stylesheet" href="/css/blogs.css" />
+    <title>PRAGNA 2026 | Events &amp; Blogs | IIITDM Kancheepuram</title>
+  </head>
+
+  <body>
+    <%- include('templates/header-1.ejs') -%>
+
+    <main class="events-main-wrap">
+      <div class="events-wrapper" style="padding-top: 36px">
+        <!-- ============================================================
+                 AUTO-SLIDING TOP PHOTO CAROUSEL (LARGE & CLEAN)
+                 ============================================================ -->
+        <div class="hero-slider-wrap">
+          <div class="showcase-slider-container">
+            <!-- Navigation Arrows -->
+            <button
+              class="slider-nav-btn slider-nav-prev"
+              aria-label="Previous Slide"
+            >
+              <i class="fa fa-chevron-left"></i>
+            </button>
+            <button
+              class="slider-nav-btn slider-nav-next"
+              aria-label="Next Slide"
+            >
+              <i class="fa fa-chevron-right"></i>
+            </button>
+
+            <!-- Slides Track -->
+            <div class="slider-wrapper">
+              <div class="slider-track" id="slider-track">
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-1.jpg" alt="PRAGNA 2026 Event Photo 1" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-2.jpg" alt="PRAGNA 2026 Event Photo 2" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-3.jpg" alt="PRAGNA 2026 Event Photo 3" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-4.jpg" alt="PRAGNA 2026 Event Photo 4" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-5.jpg" alt="PRAGNA 2026 Event Photo 5" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-6.jpg" alt="PRAGNA 2026 Event Photo 6" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-7.jpg" alt="PRAGNA 2026 Event Photo 7" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-8.jpg" alt="PRAGNA 2026 Event Photo 8" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-9.jpg" alt="PRAGNA 2026 Event Photo 9" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-10.jpg" alt="PRAGNA 2026 Event Photo 10" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-11.jpg" alt="PRAGNA 2026 Event Photo 11" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-12.jpg" alt="PRAGNA 2026 Event Photo 12" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-13.jpg" alt="PRAGNA 2026 Event Photo 13" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-14.jpg" alt="PRAGNA 2026 Event Photo 14" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-15.jpg" alt="PRAGNA 2026 Event Photo 15" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-16.jpg" alt="PRAGNA 2026 Event Photo 16" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-17.jpg" alt="PRAGNA 2026 Event Photo 17" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-18.jpg" alt="PRAGNA 2026 Event Photo 18" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-19.jpg" alt="PRAGNA 2026 Event Photo 19" class="clickable-photo" loading="lazy" /></div>
+                <div class="slide-item"><img src="/img/blog/pragna-2026/slide-20.jpg" alt="PRAGNA 2026 Event Photo 20" class="clickable-photo" loading="lazy" /></div>
+              </div>
+            </div>
+
+            <!-- Dots Indicator -->
+            <div class="slider-dots">
+              <button class="slider-dot active" aria-label="Go to slide 1"></button>
+              <button class="slider-dot" aria-label="Go to slide 2"></button>
+              <button class="slider-dot" aria-label="Go to slide 3"></button>
+              <button class="slider-dot" aria-label="Go to slide 4"></button>
+              <button class="slider-dot" aria-label="Go to slide 5"></button>
+              <button class="slider-dot" aria-label="Go to slide 6"></button>
+              <button class="slider-dot" aria-label="Go to slide 7"></button>
+              <button class="slider-dot" aria-label="Go to slide 8"></button>
+              <button class="slider-dot" aria-label="Go to slide 9"></button>
+              <button class="slider-dot" aria-label="Go to slide 10"></button>
+              <button class="slider-dot" aria-label="Go to slide 11"></button>
+              <button class="slider-dot" aria-label="Go to slide 12"></button>
+              <button class="slider-dot" aria-label="Go to slide 13"></button>
+              <button class="slider-dot" aria-label="Go to slide 14"></button>
+              <button class="slider-dot" aria-label="Go to slide 15"></button>
+              <button class="slider-dot" aria-label="Go to slide 16"></button>
+              <button class="slider-dot" aria-label="Go to slide 17"></button>
+              <button class="slider-dot" aria-label="Go to slide 18"></button>
+              <button class="slider-dot" aria-label="Go to slide 19"></button>
+              <button class="slider-dot" aria-label="Go to slide 20"></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+                 EVENT DETAILS & OVERVIEW
+                 ============================================================ -->
+        <div
+          class="events-section-header"
+          style="margin-top: 56px; margin-bottom: 40px"
+        >
+          <span class="events-label"
+            ><i class="fa fa-calendar-o" style="margin-right: 5px"></i> 22
+            August 2026</span
+          >
+          <h1 class="events-title">PRAGNA 2026</h1>
+          <hr class="events-divider" />
+          <p class="event-intro-text">
+            Flagship Industry Conclave &amp; Expert Interaction Series conducted
+            on 22 August 2026, featuring leaders and innovators from top
+            multinational companies.
+          </p>
+        </div>
+
+        <!-- ============================================================
+                 SPEAKERS SECTION (ALPHABETICALLY ORDERED WITH LOGOS)
+                 ============================================================ -->
+        <section class="speakers-section" id="speakers-showcase">
+          <div class="speakers-header-bar">
+            <div class="speakers-title-block">
+              <h2>
+                <i
+                  class="fa fa-microphone"
+                  style="color: var(--clr-accent); margin-right: 8px"
+                ></i>
+                Speakers
+              </h2>
+              <p>
+                Industry leaders and domain experts who shared their valuable
+                insights during PRAGNA 2026
+              </p>
+            </div>
+          </div>
+
+          <div class="speakers-grid">
+            <div class="speaker-card">
+              <div class="speaker-top">
+                <div class="speaker-photo-wrap">
+                  <img
+                    class="speaker-photo"
+                    src="/img/blog/pragna-2026/aalok-jaiswal.jpg"
+                    alt="Apollo Tyres Ltd. speaker"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="speaker-details">
+                  <span class="speaker-company-pill">
+                    <img
+                      src="/img/blog/pragna-2026/logos/apollo-tyres.jpg"
+                      alt="Apollo Tyres"
+                      class="speaker-company-logo"
+                    />
+                    <span>Apollo Tyres Ltd.</span>
+                  </span>
+                  <p class="speaker-designation">Designer</p>
+                </div>
+              </div>
+
+              <div class="speaker-session-box">
+                <div class="session-box-label">
+                  <i class="fa fa-bookmark"></i> Session Topic
+                </div>
+                <p class="session-topic-title">
+                  Industrial Design &amp; Product Awareness
+                </p>
+              </div>
+            </div>
+
+            <div class="speaker-card">
+              <div class="speaker-top">
+                <div class="speaker-photo-wrap">
+                  <img
+                    class="speaker-photo"
+                    src="/img/blog/pragna-2026/balajee-seshadri.jpg"
+                    alt="Infineon speaker"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="speaker-details">
+                  <span class="speaker-company-pill">
+                    <img
+                      src="/img/blog/pragna-2026/logos/infenion.jpg"
+                      alt="Infineon"
+                      class="speaker-company-logo"
+                    />
+                    <span>Infineon</span>
+                  </span>
+                  <p class="speaker-designation">Consultant</p>
+                </div>
+              </div>
+
+              <div class="speaker-session-box">
+                <div class="session-box-label">
+                  <i class="fa fa-bookmark"></i> Session Topic
+                </div>
+                <p class="session-topic-title">
+                  High-Impact Careers in Embedded Systems
+                </p>
+              </div>
+            </div>
+
+            <div class="speaker-card">
+              <div class="speaker-top">
+                <div class="speaker-photo-wrap">
+                  <img
+                    class="speaker-photo"
+                    src="/img/blog/pragna-2026/mohammad-shadab.jpg"
+                    alt="PayPal speaker"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="speaker-details">
+                  <span class="speaker-company-pill">
+                    <img
+                      src="/img/blog/pragna-2026/logos/paypal.jpg"
+                      alt="PayPal"
+                      class="speaker-company-logo"
+                    />
+                    <span>PayPal</span>
+                  </span>
+                  <p class="speaker-designation">Manager</p>
+                </div>
+              </div>
+
+              <div class="speaker-session-box">
+                <div class="session-box-label">
+                  <i class="fa fa-bookmark"></i> Session Topic
+                </div>
+                <p class="session-topic-title">
+                  Machine Learning Applications in Fintech
+                </p>
+              </div>
+            </div>
+
+            <div class="speaker-card">
+              <div class="speaker-top">
+                <div class="speaker-photo-wrap">
+                  <img
+                    class="speaker-photo"
+                    src="/img/blog/pragna-2026/prasanna-venkatesan.jpg"
+                    alt="eInfochips speaker"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="speaker-details">
+                  <span class="speaker-company-pill">
+                    <img
+                      src="/img/blog/pragna-2026/logos/einfochips.jpg"
+                      alt="eInfochips"
+                      class="speaker-company-logo"
+                    />
+                    <span>eInfochips</span>
+                  </span>
+                  <p class="speaker-designation">Director</p>
+                </div>
+              </div>
+
+              <div class="speaker-session-box">
+                <div class="session-box-label">
+                  <i class="fa fa-bookmark"></i> Session Topic
+                </div>
+                <p class="session-topic-title">
+                  Industry Expectations in the Semiconductor Domain
+                </p>
+              </div>
+            </div>
+
+            <div class="speaker-card">
+              <div class="speaker-top">
+                <div class="speaker-photo-wrap">
+                  <img
+                    class="speaker-photo"
+                    src="/img/blog/pragna-2026/radheesh-karunakaran.jpg"
+                    alt="Aptiv speaker"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="speaker-details">
+                  <span class="speaker-company-pill">
+                    <img
+                      src="/img/blog/pragna-2026/logos/aptiv.jpg"
+                      alt="Aptiv"
+                      class="speaker-company-logo"
+                    />
+                    <span>Aptiv</span>
+                  </span>
+                  <p class="speaker-designation">Director</p>
+                </div>
+              </div>
+
+              <div class="speaker-session-box">
+                <div class="session-box-label">
+                  <i class="fa fa-bookmark"></i> Session Topic
+                </div>
+                <p class="session-topic-title">
+                  Automotive Connection Systems &amp; EV Reliability
+                </p>
+              </div>
+            </div>
+
+            <div class="speaker-card">
+              <div class="speaker-top">
+                <div class="speaker-photo-wrap">
+                  <img
+                    class="speaker-photo"
+                    src="/img/blog/pragna-2026/ramachandran-venkatraman.jpg"
+                    alt="Hyundai Motor India Ltd. speaker"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="speaker-details">
+                  <span class="speaker-company-pill">
+                    <img
+                      src="/img/blog/pragna-2026/logos/hyundai.jpg"
+                      alt="Hyundai Motor India Ltd."
+                      class="speaker-company-logo"
+                    />
+                    <span>Hyundai Motor India Ltd.</span>
+                  </span>
+                  <p class="speaker-designation">Manager</p>
+                </div>
+              </div>
+
+              <div class="speaker-session-box">
+                <div class="session-box-label">
+                  <i class="fa fa-bookmark"></i> Session Topic
+                </div>
+                <p class="session-topic-title">
+                  Future Trends &amp; Innovations in Automotive
+                </p>
+              </div>
+            </div>
+
+            <div class="speaker-pair-row">
+              <div class="speaker-card">
+                <div class="speaker-top">
+                  <div class="speaker-photo-wrap">
+                    <img
+                      class="speaker-photo"
+                      src="/img/blog/pragna-2026/vidya-durai.jpg"
+                      alt="BNY Mellon speaker"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="speaker-details">
+                    <span class="speaker-company-pill">
+                      <img
+                        src="/img/blog/pragna-2026/logos/bny-mellon.jpg"
+                        alt="BNY Mellon"
+                        class="speaker-company-logo"
+                      />
+                      <span>BNY Mellon</span>
+                    </span>
+                    <p class="speaker-designation">Director</p>
+                  </div>
+                </div>
+
+                <div class="speaker-session-box">
+                  <div class="session-box-label">
+                    <i class="fa fa-bookmark"></i> Session Topic
+                  </div>
+                  <p class="session-topic-title">
+                    Technology Leadership &amp; Financial Services
+                  </p>
+                </div>
+              </div>
+
+              <div class="speaker-card">
+                <div class="speaker-top">
+                  <div class="speaker-photo-wrap">
+                    <img
+                      class="speaker-photo"
+                      src="/img/blog/pragna-2026/vijayakumar-balu.jpg"
+                      alt="Tekion speaker"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="speaker-details">
+                    <span class="speaker-company-pill">
+                      <img
+                        src="/img/blog/pragna-2026/logos/tekion.jpg"
+                        alt="Tekion"
+                        class="speaker-company-logo"
+                      />
+                      <span>Tekion</span>
+                    </span>
+                    <p class="speaker-designation">Director</p>
+                  </div>
+                </div>
+
+                <div class="speaker-session-box">
+                  <div class="session-box-label">
+                    <i class="fa fa-bookmark"></i> Session Topic
+                  </div>
+                  <p class="session-topic-title">
+                    Product Management in the Era of AI
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div
+          style="
+            margin-top: 48px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+          "
+        >
+          <img
+            src="/img/blog/pragna-2026/team.jpg"
+            alt="PRAGNA 2026 team"
+            style="
+              width: min(100%, 760px);
+              max-height: 420px;
+              object-fit: cover;
+              border-radius: 20px;
+              box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+            "
+          />
+          <p
+            style="
+              margin: 0;
+              font-size: 1.05rem;
+              font-weight: 600;
+              color: var(--clr-text, #1d1d1f);
+              letter-spacing: 0.02em;
+            "
+          >
+            Thank you to the PRAGNA 2026 team.
+          </p>
+        </div>
+
+        <!-- Back to Blogs -->
+        <div style="margin-top: 56px; text-align: center">
+          <a href="/blogs" class="blog-back-btn">
+            <i class="fa fa-arrow-left"></i> Back to All Events
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Lightbox Modal for Photo Enlarge View -->
+    <div
+      class="photo-lightbox-modal"
+      id="photo-lightbox"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="lightbox-content-wrapper">
+        <button
+          class="lightbox-close-btn"
+          id="lightbox-close"
+          aria-label="Close Lightbox"
+        >
+          <i class="fa fa-times"></i>
+        </button>
+        <img src="" alt="" class="lightbox-image" id="lightbox-img" />
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+      </div>
+    </div>
+
+    <script src="/scripts/blogs.js"></script>
+    <%- include('templates/footer-1.ejs') -%>
+  </body>
+</html>

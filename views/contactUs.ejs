@@ -1,581 +1,700 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Placements Team | IIITDM Kancheepuram</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="/css/contactUs.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/contactUs.css" />
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #f4f6fb;
-            color: #1a1a2e;
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f4f6fb;
+        color: #1a1a2e;
+      }
 
-        /* ── Page hero banner ── */
-        .contact-hero {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #1565c0 100%);
-            padding: 48px 20px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+      /* ── Page hero banner ── */
+      .contact-hero {
+        background: linear-gradient(
+          135deg,
+          #1a237e 0%,
+          #283593 50%,
+          #1565c0 100%
+        );
+        padding: 48px 20px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
 
-        .contact-hero::before {
-            content: '';
-            position: absolute;
-            top: -60px;
-            right: -60px;
-            width: 300px;
-            height: 300px;
-            background: rgba(0, 255, 224, 0.08);
-            border-radius: 50%;
-        }
+      .contact-hero::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 300px;
+        height: 300px;
+        background: rgba(0, 255, 224, 0.08);
+        border-radius: 50%;
+      }
 
-        .contact-hero::after {
-            content: '';
-            position: absolute;
-            bottom: -80px;
-            left: -40px;
-            width: 250px;
-            height: 250px;
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 50%;
-        }
+      .contact-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -80px;
+        left: -40px;
+        width: 250px;
+        height: 250px;
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 50%;
+      }
 
+      .contact-hero h1 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: 0.5px;
+      }
+
+      .contact-hero p {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.95rem;
+        margin-top: 0.4rem;
+      }
+
+      .hero-accent {
+        display: inline-block;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(90deg, #00ffe0, #304ffe);
+        border-radius: 2px;
+        margin: 0.8rem auto 0;
+      }
+
+      /* ── Section wrapper ── */
+      .team-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px 48px;
+      }
+
+      /* ── Section heading ── */
+      .section-heading {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin: 36px 0 24px;
+      }
+
+      .section-heading .line {
+        flex: 1;
+        height: 1px;
+        background: #d8dce8;
+      }
+
+      .section-heading h2 {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #1a237e;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        white-space: nowrap;
+        padding: 6px 18px;
+        background: #e8eaf6;
+        border-radius: 30px;
+      }
+
+      /* ── Card grid ── */
+      .cards-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+      }
+
+      /* Leadership / Placements Team cards (larger) */
+      .card-leader {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(26, 35, 126, 0.08);
+        overflow: hidden;
+        width: 250px;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+        position: relative;
+      }
+
+      .card-leader:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(26, 35, 126, 0.14);
+      }
+
+      .card-leader .card-top-bar {
+        height: 5px;
+        background: linear-gradient(90deg, #00ffe0, #1a237e);
+      }
+
+      .card-leader .card-img-wrap {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        margin: 24px auto 14px;
+        overflow: hidden;
+        border: 3px solid #e8eaf6;
+        background: #f0f2ff;
+      }
+
+      .card-leader .card-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card-leader .card-body {
+        padding: 0 18px 22px;
+        text-align: center;
+      }
+
+      .card-leader .card-name {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #1a237e;
+        line-height: 1.3;
+      }
+
+      .card-leader .card-post {
+        font-size: 0.82rem;
+        color: #5c6bc0;
+        margin-top: 6px;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      .card-leader .card-contact {
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .card-leader .card-contact a,
+      .card-leader .card-contact span {
+        font-size: 0.78rem;
+        color: #616161;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        transition: color 0.2s;
+      }
+
+      .card-leader .card-contact a:hover {
+        color: #1a237e;
+      }
+
+      .card-leader .card-contact i {
+        color: #5c6bc0;
+        font-size: 0.75rem;
+      }
+
+      /* Faculty & Office — medium cards */
+      .card-member {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(26, 35, 126, 0.07);
+        overflow: hidden;
+        width: 220px;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .card-member:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(26, 35, 126, 0.12);
+      }
+
+      .card-member .card-top-bar {
+        height: 4px;
+        background: linear-gradient(90deg, #304ffe, #00ffe0);
+      }
+
+      .card-member .card-img-wrap {
+        width: 95px;
+        height: 95px;
+        border-radius: 50%;
+        margin: 20px auto 12px;
+        overflow: hidden;
+        border: 3px solid #e8eaf6;
+        background: #f0f2ff;
+      }
+
+      .card-member .card-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card-member .card-body {
+        padding: 0 18px 22px;
+        text-align: center;
+      }
+
+      .card-member .card-name {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #1a237e;
+        line-height: 1.3;
+      }
+
+      .card-member .card-post {
+        font-size: 0.82rem;
+        color: #5c6bc0;
+        margin-top: 6px;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      .card-member .card-contact {
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .card-member .card-contact a,
+      .card-member .card-contact span {
+        font-size: 0.78rem;
+        color: #616161;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        transition: color 0.2s;
+        word-break: break-all;
+      }
+
+      .card-member .card-contact a:hover {
+        color: #1a237e;
+      }
+
+      .card-member .card-contact i {
+        color: #5c6bc0;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+      }
+
+      /* Student coordinator — compact chips */
+      .cards-grid-students {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+      }
+
+      .card-student {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 3px 16px rgba(26, 35, 126, 0.08);
+        overflow: hidden;
+        width: 180px;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .card-student:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(26, 35, 126, 0.13);
+      }
+
+      .card-student .card-top-bar {
+        height: 4px;
+        background: linear-gradient(90deg, #00ffe0, #1a237e);
+      }
+
+      .card-student .card-img-wrap {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 16px auto 10px;
+        overflow: hidden;
+        border: 3px solid #e8eaf6;
+        background: #f0f2ff;
+      }
+
+      .card-student .card-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card-student .card-body {
+        padding: 0 12px 14px;
+        text-align: center;
+      }
+
+      .card-student .card-name {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #1a237e;
+        line-height: 1.3;
+      }
+
+      .card-student .card-post {
+        display: inline-block;
+        margin-top: 6px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #3949ab;
+        background: #e8eaf6;
+        border-radius: 20px;
+        padding: 2px 10px;
+      }
+
+      .card-student .card-contact {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .card-student .card-contact a {
+        font-size: 0.7rem;
+        color: #757575;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        word-break: break-all;
+        transition: color 0.2s;
+      }
+
+      .card-student .card-contact a:hover {
+        color: #1a237e;
+      }
+
+      .card-student .card-contact i {
+        color: #7986cb;
+        font-size: 0.73rem;
+        flex-shrink: 0;
+      }
+
+      /* ── Contact info footer strip ── */
+      .contact-strip {
+        background: linear-gradient(135deg, #1a237e, #283593);
+        color: #fff;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 20px;
+      }
+
+      .contact-strip h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .contact-strip .strip-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 32px;
+      }
+
+      .contact-strip .strip-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      .contact-strip .strip-item i {
+        color: #00ffe0;
+        font-size: 1.1rem;
+      }
+
+      .contact-strip .strip-item a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+      }
+
+      .contact-strip .strip-item a:hover {
+        color: #00ffe0;
+      }
+
+      @media (max-width: 768px) {
         .contact-hero h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: 0.5px;
+          font-size: 2rem;
         }
 
-        .contact-hero p {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.95rem;
-            margin-top: 0.4rem;
-        }
-
-        .hero-accent {
-            display: inline-block;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, #00ffe0, #304ffe);
-            border-radius: 2px;
-            margin: 0.8rem auto 0;
-        }
-
-        /* ── Section wrapper ── */
-        .team-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px 48px;
-        }
-
-        /* ── Section heading ── */
-        .section-heading {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin: 36px 0 24px;
-        }
-
-        .section-heading .line {
-            flex: 1;
-            height: 1px;
-            background: #d8dce8;
-        }
-
-        .section-heading h2 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #1a237e;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            white-space: nowrap;
-            padding: 6px 18px;
-            background: #e8eaf6;
-            border-radius: 30px;
-        }
-
-        /* ── Card grid ── */
-        .cards-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            justify-content: center;
-        }
-
-        /* Leadership / Placements Team cards (larger) */
         .card-leader {
-            background: #fff;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(26, 35, 126, 0.08);
-            overflow: hidden;
-            width: 250px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-            position: relative;
+          width: 160px;
         }
 
-        .card-leader:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(26, 35, 126, 0.14);
-        }
-
-        .card-leader .card-top-bar {
-            height: 5px;
-            background: linear-gradient(90deg, #00ffe0, #1a237e);
-        }
-
-        .card-leader .card-img-wrap {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            margin: 24px auto 14px;
-            overflow: hidden;
-            border: 3px solid #e8eaf6;
-            background: #f0f2ff;
-        }
-
-        .card-leader .card-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-leader .card-body {
-            padding: 0 18px 22px;
-            text-align: center;
-        }
-
-        .card-leader .card-name {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #1a237e;
-            line-height: 1.3;
-        }
-
-        .card-leader .card-post {
-            font-size: 0.82rem;
-            color: #5c6bc0;
-            margin-top: 6px;
-            font-weight: 500;
-            line-height: 1.4;
-        }
-
-        .card-leader .card-contact {
-            margin-top: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .card-leader .card-contact a,
-        .card-leader .card-contact span {
-            font-size: 0.78rem;
-            color: #616161;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            transition: color 0.2s;
-        }
-
-        .card-leader .card-contact a:hover {
-            color: #1a237e;
-        }
-
-        .card-leader .card-contact i {
-            color: #5c6bc0;
-            font-size: 0.75rem;
-        }
-
-        /* Faculty & Office — medium cards */
         .card-member {
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 4px 16px rgba(26, 35, 126, 0.07);
-            overflow: hidden;
-            width: 220px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .card-member:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(26, 35, 126, 0.12);
-        }
-
-        .card-member .card-top-bar {
-            height: 4px;
-            background: linear-gradient(90deg, #304ffe, #00ffe0);
-        }
-
-        .card-member .card-img-wrap {
-            width: 95px;
-            height: 95px;
-            border-radius: 50%;
-            margin: 20px auto 12px;
-            overflow: hidden;
-            border: 3px solid #e8eaf6;
-            background: #f0f2ff;
-        }
-
-        .card-member .card-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-member .card-body {
-            padding: 0 18px 22px;
-            text-align: center;
-        }
-
-        .card-member .card-name {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #1a237e;
-            line-height: 1.3;
-        }
-
-        .card-member .card-post {
-            font-size: 0.82rem;
-            color: #5c6bc0;
-            margin-top: 6px;
-            font-weight: 500;
-            line-height: 1.4;
-        }
-
-        .card-member .card-contact {
-            margin-top: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .card-member .card-contact a,
-        .card-member .card-contact span {
-            font-size: 0.78rem;
-            color: #616161;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            transition: color 0.2s;
-            word-break: break-all;
-        }
-
-        .card-member .card-contact a:hover {
-            color: #1a237e;
-        }
-
-        .card-member .card-contact i {
-            color: #5c6bc0;
-            font-size: 0.75rem;
-            flex-shrink: 0;
-        }
-
-        /* Student coordinator — compact chips */
-        .cards-grid-students {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            justify-content: center;
+          width: 155px;
         }
 
         .card-student {
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 3px 16px rgba(26, 35, 126, 0.08);
-            overflow: hidden;
-            width: 180px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+          width: 145px;
         }
-
-        .card-student:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(26, 35, 126, 0.13);
-        }
-
-        .card-student .card-top-bar {
-            height: 4px;
-            background: linear-gradient(90deg, #00ffe0, #1a237e);
-        }
-
-        .card-student .card-img-wrap {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 16px auto 10px;
-            overflow: hidden;
-            border: 3px solid #e8eaf6;
-            background: #f0f2ff;
-        }
-
-        .card-student .card-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-student .card-body {
-            padding: 0 12px 14px;
-            text-align: center;
-        }
-
-        .card-student .card-name {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: #1a237e;
-            line-height: 1.3;
-        }
-
-        .card-student .card-post {
-            display: inline-block;
-            margin-top: 6px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: #3949ab;
-            background: #e8eaf6;
-            border-radius: 20px;
-            padding: 2px 10px;
-        }
-
-        .card-student .card-contact {
-            margin-top: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .card-student .card-contact a {
-            font-size: 0.7rem;
-            color: #757575;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            word-break: break-all;
-            transition: color 0.2s;
-        }
-
-        .card-student .card-contact a:hover {
-            color: #1a237e;
-        }
-
-        .card-student .card-contact i {
-            color: #7986cb;
-            font-size: 0.73rem;
-            flex-shrink: 0;
-        }
-
-        /* ── Contact info footer strip ── */
-        .contact-strip {
-            background: linear-gradient(135deg, #1a237e, #283593);
-            color: #fff;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 20px;
-        }
-
-        .contact-strip h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .contact-strip .strip-items {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 32px;
-        }
-
-        .contact-strip .strip-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .contact-strip .strip-item i {
-            color: #00ffe0;
-            font-size: 1.1rem;
-        }
-
-        .contact-strip .strip-item a {
-            color: rgba(255, 255, 255, 0.85);
-            text-decoration: none;
-        }
-
-        .contact-strip .strip-item a:hover {
-            color: #00ffe0;
-        }
-
-        @media (max-width: 768px) {
-            .contact-hero h1 {
-                font-size: 2rem;
-            }
-
-            .card-leader {
-                width: 160px;
-            }
-
-            .card-member {
-                width: 155px;
-            }
-
-            .card-student {
-                width: 145px;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <%- include('templates/header-1.ejs') -%>
 
-        <!-- Hero Banner -->
-        <div class="contact-hero">
-            <h1>Meet the Team</h1>
-            <p>IIITDM Kancheepuram — Placement Cell 2025–26</p>
-            <div class="hero-accent"></div>
-        </div>
+    <!-- Hero Banner -->
+    <div class="contact-hero">
+      <h1>Meet the Team</h1>
+      <p>IIITDM Kancheepuram — Placement Cell 2025–26</p>
+      <div class="hero-accent"></div>
+    </div>
 
-        <div class="team-section">
+    <div class="team-section">
+      <!-- ── Placements Leadership ── -->
+      <div class="section-heading">
+        <div class="line"></div>
+        <h2>Placements Team</h2>
+        <div class="line"></div>
+      </div>
+      <div class="cards-grid" id="leadership-cards"></div>
 
-            <!-- ── Placements Leadership ── -->
-            <div class="section-heading">
-                <div class="line"></div>
-                <h2>Placements Team</h2>
-                <div class="line"></div>
-            </div>
-            <div class="cards-grid" id="leadership-cards"></div>
+      <!-- ── Faculty Advisors ── -->
+      <div class="section-heading">
+        <div class="line"></div>
+        <h2>Faculty Advisors</h2>
+        <div class="line"></div>
+      </div>
+      <div class="cards-grid" id="faculty-cards"></div>
 
-            <!-- ── Faculty Advisors ── -->
-            <div class="section-heading">
-                <div class="line"></div>
-                <h2>Faculty Advisors</h2>
-                <div class="line"></div>
-            </div>
-            <div class="cards-grid" id="faculty-cards"></div>
+      <!-- ── Placement Office ── -->
+      <div class="section-heading">
+        <div class="line"></div>
+        <h2>Placement Office</h2>
+        <div class="line"></div>
+      </div>
+      <div class="cards-grid" id="office-cards"></div>
 
-            <!-- ── Placement Office ── -->
-            <div class="section-heading">
-                <div class="line"></div>
-                <h2>Placement Office</h2>
-                <div class="line"></div>
-            </div>
-            <div class="cards-grid" id="office-cards"></div>
+      <!-- ── Student Coordinators ── -->
+      <div class="section-heading">
+        <div class="line"></div>
+        <h2>Student Co-ordinators</h2>
+        <div class="line"></div>
+      </div>
+      <div class="cards-grid-students" id="student-cards"></div>
+    </div>
 
-            <!-- ── Student Coordinators ── -->
-            <div class="section-heading">
-                <div class="line"></div>
-                <h2>Student Co-ordinators</h2>
-                <div class="line"></div>
-            </div>
-            <div class="cards-grid-students" id="student-cards"></div>
+    <%- include('templates/footer-1.ejs') -%>
 
-        </div>
+    <script>
+      const teamData = {
+        leadership: [
+          {
+            name: "Prof. Sreekumar M",
+            image: "/img/leadership/pic-placements.jpg",
+            post: "PIC - Placements",
+          },
+          {
+            name: "Dr. Parvathy Das",
+            image:
+              "https://www.iiitdm.ac.in/_app/immutable/assets/jasmineW.ce91de97.webp",
+            post: "PIC - Training and Communication Skill",
+          },
+          {
+            name: "Prof. Rino Nelson",
+            image: "/img/leadership/pic-internships.jpg",
+            post: "PIC - Internships",
+          },
+        ],
+        faculty: [
+          {
+            name: "Dr. Rahul Raman",
+            image: "https://mis.iiitdm.ac.in/Profile/images/Profile/rahul.jpeg",
+            post: "Faculty Coordinator - CSE",
+          },
+          {
+            name: "Dr. Tejendra Dixit",
+            image:
+              "https://www.iiitdm.ac.in/_app/immutable/assets/DrTejendraDixit.a9ea31dd.webp",
+            post: "Faculty Coordinator - ECE",
+          },
+          {
+            name: "Dr. Nagaraj M",
+            image:
+              "https://www.iiitdm.ac.in/_app/immutable/assets/DrNagaraj.892b8697.webp",
+            post: "Faculty Coordinator - ME",
+          },
+          {
+            name: "Dr. Siddhant Shrivastava",
+            image:
+              "https://www.iiitdm.ac.in/_app/immutable/assets/DrSiddhantShrivastava.039a550a.webp",
+            post: "Faculty Coordinator - SIDI",
+          },
+        ],
+        office: [
+          {
+            name: "Mr. Azarudeen A",
+            image: "/img/office/TPO.jpg",
+            post: "Training & Placement Officer",
+            email: "placement@iiitdm.ac.in",
+            contact: "+91 934 461 5687<br>+91 996 528 7956",
+          },
+          {
+            name: "Mr. Parthiban S",
+            image: "/img/office/parthiban.jpg",
+            post: "Junior Assistant",
+          },
+          {
+            name: "T Bhargav Sai",
+            image: "/img/coordinators_2026/Bhargav.jpg",
+            post: "Placement Secretary",
+            email: "cs23b1040@iiitdm.ac.in",
+            contact: "+91 630 433 6165",
+          },
+          {
+            name: "V Sreevathsan",
+            image: "/img/coordinators_2026/sreevastav.jpg",
+            post: "Placement Joint Secretary",
+            email: "ec24b1080@iiitdm.ac.in",
+          },
+        ],
+        students: [
+          {
+            name: "Hrishik Reddy",
+            image: "/img/coordinators_2026/Hrishik.jpg",
+            post: "CSE Team Lead",
+            email: "cs23b1083@iiitdm.ac.in",
+            rollNumber: "CS23B1083",
+          },
+          {
+            name: "Aditya Prudhivi",
+            image: "/img/coordinators_2026/aditya.jpg",
+            post: "CSE Team Lead",
+            email: "cs23b1087@iiitdm.ac.in",
+            rollNumber: "CS23B1087",
+          },
+          {
+            name: "D Indra Kumar",
+            image: "/img/coordinators_2026/indra.jpg",
+            post: "CSE-AI Team Lead",
+            email: "cs23b2009@iiitdm.ac.in",
+            rollNumber: "CS23B2009",
+          },
+          {
+            name: "S Suhas Ram Singh",
+            image: "/img/coordinators_2026/Suhas.jpg",
+            post: "ECE Team Lead",
+            email: "ec23b1087@iiitdm.ac.in",
+            rollNumber: "EC23B1087",
+          },
+          {
+            name: "Gunturu Akash",
+            image: "/img/coordinators_2026/Akash.jpg",
+            post: "MECH Team Lead",
+            email: "me23b1018@iiitdm.ac.in",
+            rollNumber: "ME23B1018",
+          },
+          {
+            name: "Arunkumar S",
+            image: "/img/coordinators_2026/arun.jpg",
+            post: "SM Team Lead",
+            email: "me23b1028@iiitdm.ac.in",
+            rollNumber: "ME23B1028",
+          },
+        ],
+      };
 
-
-
-        <%- include('templates/footer-1.ejs') -%>
-
-            <script>
-                const teamData = {
-                    leadership: [
-                        { name: "Prof. Sreekumar M", image: "/img/leadership/pic-placements.png", post: "PIC - Placements" },
-                        { name: "Dr. Parvathy Das", image: "https://www.iiitdm.ac.in/_app/immutable/assets/jasmineW.ce91de97.webp", post: "PIC - Training and Communication Skill" },
-                        { name: "Prof. Rino Nelson", image: "/img/leadership/pic-internships.jpg", post: "PIC - Internships" },
-                    ],
-                    faculty: [
-                        { name: "Dr. Rahul Raman", image: "https://mis.iiitdm.ac.in/Profile/images/Profile/rahul.jpeg", post: "Faculty Coordinator - CSE" },
-                        { name: "Dr. Tejendra Dixit", image: "https://www.iiitdm.ac.in/_app/immutable/assets/DrTejendraDixit.a9ea31dd.webp", post: "Faculty Coordinator - ECE" },
-                        { name: "Dr. Nagaraj M", image: "https://www.iiitdm.ac.in/_app/immutable/assets/DrNagaraj.892b8697.webp", post: "Faculty Coordinator - ME" },
-                        { name: "Dr. Siddhant Shrivastava", image: "https://www.iiitdm.ac.in/_app/immutable/assets/DrSiddhantShrivastava.039a550a.webp", post: "Faculty Coordinator - SIDI" },
-                    ],
-                    office: [
-                        { name: "Mr. Azarudeen A", image: "/img/office/TPO.jpg", post: "Training & Placement Officer", email: "placement@iiitdm.ac.in", contact: "+91 934 461 5687<br>+91 996 528 7956" },
-                        { name: "T Bhargav Sai", image: "/img/coordinators_2026/Bhargav.jpg", post: "Placement Secretary", email: "cs23b1040@iiitdm.ac.in", contact: "+91 630 433 6165" },
-                        { name: "V Sreevathsan", image: "/img/coordinators_2026/sreevastav.jpeg", post: "Placement Joint Secretary", email: "ec24b1080@iiitdm.ac.in" },
-                    ],
-                    students: [
-                        { name: "Hrishik Reddy", image: "/img/coordinators_2026/Hrishik.jpg", post: "CSE Team Lead", email: "cs23b1083@iiitdm.ac.in", rollNumber: "CS23B1083" },
-                        { name: "Aditya Prudhivi", image: "/img/coordinators_2026/aditya.jpg", post: "CSE Team Lead", email: "cs23b1087@iiitdm.ac.in", rollNumber: "CS23B1087" },
-                        { name: "D Indra Kumar", image: "/img/coordinators_2026/indra.png", post: "CSE-AI Team Lead", email: "cs23b2009@iiitdm.ac.in", rollNumber: "CS23B2009" },
-                        { name: "S Suhas Ram Singh", image: "/img/coordinators_2026/suhas.png", post: "ECE Team Lead", email: "ec23b1087@iiitdm.ac.in", rollNumber: "EC23B1087" },
-                        { name: "Gunturu Akash", image: "/img/coordinators_2026/AKash.png", post: "MECH Team Lead", email: "me23b1018@iiitdm.ac.in", rollNumber: "ME23B1018" },
-                        { name: "Arunkumar S", image: "/img/coordinators_2026/arun.jpg", post: "SM Team Lead", email: "me23b1028@iiitdm.ac.in", rollNumber: "ME23B1028" },
-                    ]
-                };
-
-                function buildLeaderCard(m) {
-                    return `
+      function buildLeaderCard(m) {
+        return `
         <div class="card-leader">
           <div class="card-top-bar"></div>
-          <div class="card-img-wrap"><img src="${m.image}" alt="${m.name}" onerror="this.src='/img/coordinators_2026/image.png'"></div>
+          <div class="card-img-wrap"><img src="${m.image}" alt="${m.name || m.post}" onerror="this.src='/img/coordinators_2026/image.jpg'"></div>
           <div class="card-body">
-            <div class="card-name">${m.name}</div>
+            <div class="card-name">${m.name || ''}</div>
             <div class="card-post">${m.post}</div>
-            ${m.email || m.contact ? `<div class="card-contact">
-              ${m.email ? `<a href="mailto:${m.email}"><i class="fa-solid fa-envelope"></i>${m.email}</a>` : ''}
-              ${m.contact ? `<span><i class="fa-solid fa-phone"></i>${m.contact}</span>` : ''}
-            </div>` : ''}
+            ${
+              m.email || m.contact
+                ? `<div class="card-contact">
+              ${m.email ? `<a href="mailto:${m.email}"><i class="fa-solid fa-envelope"></i>${m.email}</a>` : ""}
+              ${m.contact ? `<span><i class="fa-solid fa-phone"></i>${m.contact}</span>` : ""}
+            </div>`
+                : ""
+            }
           </div>
         </div>`;
-                }
+      }
 
-                function buildMemberCard(m) {
-                    return `
+      function buildMemberCard(m) {
+        return `
         <div class="card-member">
           <div class="card-top-bar"></div>
-          <div class="card-img-wrap"><img src="${m.image}" alt="${m.name}" onerror="this.src='/img/coordinators_2026/image.png'"></div>
+          <div class="card-img-wrap"><img src="${m.image}" alt="${m.name || m.post}" onerror="this.src='/img/coordinators_2026/image.jpg'"></div>
           <div class="card-body">
-            <div class="card-name">${m.name}</div>
+            <div class="card-name">${m.name || ''}</div>
             <div class="card-post">${m.post}</div>
-            ${m.email || m.contact ? `<div class="card-contact">
-              ${m.email ? `<a href="mailto:${m.email}"><i class="fa-solid fa-envelope"></i>${m.email}</a>` : ''}
-              ${m.contact ? `<span><i class="fa-solid fa-phone"></i>${m.contact}</span>` : ''}
-            </div>` : ''}
+            ${
+              m.email || m.contact
+                ? `<div class="card-contact">
+              ${m.email ? `<a href="mailto:${m.email}"><i class="fa-solid fa-envelope"></i>${m.email}</a>` : ""}
+              ${m.contact ? `<span><i class="fa-solid fa-phone"></i>${m.contact}</span>` : ""}
+            </div>`
+                : ""
+            }
           </div>
         </div>`;
-                }
+      }
 
-                function buildStudentCard(m) {
-                    return `
+      function buildStudentCard(m) {
+        return `
         <div class="card-student">
           <div class="card-top-bar"></div>
-          <div class="card-img-wrap"><img src="${m.image}" alt="${m.name}" onerror="this.src='/img/coordinators_2026/image.png'"></div>
+          <div class="card-img-wrap"><img src="${m.image}" alt="${m.name || m.post}" onerror="this.src='/img/coordinators_2026/image.jpg'"></div>
           <div class="card-body">
-            <div class="card-name">${m.name}</div>
+            <div class="card-name">${m.name || ''}</div>
             <div class="card-post">${m.post}</div>
-            ${m.email ? `<div class="card-contact">
+            ${
+              m.email
+                ? `<div class="card-contact">
               <a href="mailto:${m.email}"><i class="fa-solid fa-envelope"></i>${m.email}</a>
-            </div>` : ''}
+            </div>`
+                : ""
+            }
           </div>
         </div>`;
-                }
+      }
 
-                document.getElementById('leadership-cards').innerHTML = teamData.leadership.map(buildLeaderCard).join('');
-                document.getElementById('faculty-cards').innerHTML = teamData.faculty.map(buildMemberCard).join('');
-                document.getElementById('office-cards').innerHTML = teamData.office.map(buildMemberCard).join('');
-                document.getElementById('student-cards').innerHTML = teamData.students.map(buildStudentCard).join('');
-            </script>
-</body>
-
+      document.getElementById("leadership-cards").innerHTML =
+        teamData.leadership.map(buildLeaderCard).join("");
+      document.getElementById("faculty-cards").innerHTML = teamData.faculty
+        .map(buildMemberCard)
+        .join("");
+      document.getElementById("office-cards").innerHTML = teamData.office
+        .map(buildMemberCard)
+        .join("");
+      document.getElementById("student-cards").innerHTML = teamData.students
+        .map(buildStudentCard)
+        .join("");
+    </script>
+  </body>
 </html>

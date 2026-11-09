@@ -1,5 +1,9 @@
 var express = require("express");
 var route = express.Router();
+
+// Load interview experiences data
+var { companies: interviewCompanies } = require("../public/data/interviewExperiences.js");
+
 //routes
 route.get("/", (req, res) => {
   res.render("home");
@@ -56,10 +60,35 @@ route.get("/placementprocedure", (req, res) => {
 route.get("/underConstruction", (req, res) => {
   res.render("underConstruction");
 });
-route.get("/notFound", (req, res) => {
-  res.render("notFound");
+route.get("/blogs", (req, res) => {
+  res.render("blogs");
+});
+route.get("/blog", (req, res) => {
+  res.render("blogs");
+});
+route.get("/blogs/pragna-2026", (req, res) => {
+  res.render("pragna2026");
+});
+route.get("/blog/pragna-2026", (req, res) => {
+  res.render("pragna2026");
 });
 
+// Interview Experiences routes
+route.get("/interview-experiences", (req, res) => {
+  res.render("interviewExperiences", { companies: interviewCompanies });
+});
 
+route.get("/interview-experiences/:companyId", (req, res) => {
+  const companyId = req.params.companyId;
+  const company = interviewCompanies.find(function (c) {
+    return c.id === companyId;
+  });
+
+  if (company) {
+    res.render("interviewExperienceCompany", { company: company });
+  } else {
+    res.render("underConstruction");
+  }
+});
 
 module.exports = route;

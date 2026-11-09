@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= company.name %> - Interview Experiences | Placement Cell | IIITDM Kancheepuram</title>
+    <link rel="icon" href="/img/icons/logo.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/templates-1.css">
+    <link rel="stylesheet" href="/css/interviewExperiences.css">
+</head>
+<body>
+    <%- include('templates/header-1.ejs') -%>
+
+    <!-- Company Header -->
+    <header class="ie-company-header">
+        <% if (company.logo) { %>
+        <img src="<%= company.logo %>" alt="<%= company.name %> Logo" class="ie-company-header-logo"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="ie-company-header-logo-placeholder" style="display:none;">
+            <%= company.name %>
+        </div>
+        <% } else { %>
+        <div class="ie-company-header-logo-placeholder">
+            <%= company.name %>
+        </div>
+        <% } %>
+        <h1><%= company.name %></h1>
+        <p><%= company.description %></p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="ie-bg-alt">
+        <section class="ie-wrapper">
+
+            <!-- Know Before You Interview -->
+            <div class="ie-info-card">
+                <h2>Know Before You Interview</h2>
+                <ul>
+                    <% company.knowBeforeInterview.forEach(function(item) { %>
+                    <li><%= item %></li>
+                    <% }); %>
+                </ul>
+            </div>
+
+            <!-- Company Experience List -->
+            <div class="ie-info-card">
+                <h2>Interview Experiences</h2>
+                <p>Shared by students from various batches and branches</p>
+
+                <div class="ie-experience-list">
+                    <% company.experiences.forEach(function(experience) { %>
+                    <div class="ie-experience-card" data-exp-id="<%= experience.id %>">
+                        <div class="ie-experience-card-header">
+                            <div class="ie-experience-summary">
+                                <div class="ie-experience-title">Interview Experience #<%= experience.id.split('-').pop() %></div>
+                                <div class="ie-experience-meta">
+                                    <span><i class="fa fa-graduation-cap"></i> <%= experience.branch %></span>
+                                    <span><i class="fa fa-calendar"></i> <%= experience.batch %> Batch</span>
+                                </div>
+                            </div>
+                            <div class="ie-experience-process">
+                                <%= experience.numberOfRounds %> Rounds
+                                <i class="fa fa-chevron-down ie-chevron-icon"></i>
+                            </div>
+                        </div>
+                        <div class="ie-experience-detail">
+                            <!-- Student/Batch Information -->
+                            <div class="ie-student-info">
+                                <div class="ie-student-info-grid">
+                                    <div class="ie-info-item">
+                                        <div class="ie-info-label">Batch</div>
+                                        <div class="ie-info-value"><%= experience.batch %></div>
+                                    </div>
+                                    <div class="ie-info-item">
+                                        <div class="ie-info-label">Branch</div>
+                                        <div class="ie-info-value"><%= experience.branch %></div>
+                                    </div>
+                                    <div class="ie-info-item">
+                                        <div class="ie-info-label">Role</div>
+                                        <div class="ie-info-value"><%= experience.role %></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Overall Interview Process -->
+                            <div class="ie-process-overview">
+                                <p>
+                                    <strong>Number of Rounds:</strong> <%= experience.numberOfRounds %> |
+                                    <strong>Total Process:</strong>
+                                    <% for (let i = 0; i < experience.rounds.length; i++) { %>
+                                        <%= experience.rounds[i].name %><% if (i < experience.rounds.length - 1) { %> → <% } %>
+                                    <% } %>
+                                </p>
+                            </div>
+
+                            <!-- Round-by-Round Experience -->
+                            <section class="ie-rounds-section">
+                                <h2 class="ie-rounds-section-title">Round-by-Round Experience</h2>
+
+                                <% experience.rounds.forEach(function(round, index) { %>
+                                <div class="ie-round">
+                                    <div class="ie-round-header">
+                                        <div class="ie-round-title"><%= index + 1 %>. <%= round.name %></div>
+                                        <div class="ie-round-meta">
+                                            <span><i class="fa fa-clock-o"></i> <%= round.duration %></span>
+                                            <span><i class="fa fa-tags"></i> <%= round.type %></span>
+                                        </div>
+                                        <i class="fa fa-chevron-down ie-chevron-icon"></i>
+                                    </div>
+                                    <div class="ie-round-content">
+                                        <div class="ie-round-meta">
+                                            <div class="ie-round-meta-item">
+                                                <div class="ie-round-meta-label">Duration</div>
+                                                <div class="ie-round-meta-value"><%= round.duration %></div>
+                                            </div>
+                                            <div class="ie-round-meta-item">
+                                                <div class="ie-round-meta-label">Type</div>
+                                                <div class="ie-round-meta-value"><%= round.type %></div>
+                                            </div>
+                                            <div class="ie-round-meta-item">
+                                                <div class="ie-round-meta-label">Difficulty</div>
+                                                <div class="ie-round-meta-value ie-difficulty-<%= round.difficulty.toLowerCase() %>">
+                                                    <%= round.difficulty.charAt(0).toUpperCase() + round.difficulty.slice(1) %>
+                                                </div>
+                                            </div>
+                                            <div class="ie-round-meta-item">
+                                                <div class="ie-round-meta-label">Topics Covered</div>
+                                                <div class="ie-round-meta-value">
+                                                    <div class="ie-round-section">
+                                                        <% round.topics.forEach(function(topic) { %>
+                                                        <span class="ie-round-section-topic"><%= topic %></span>
+                                                        <% }); %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="ie-round-section">
+                                            <h4>What was asked?</h4>
+                                            <ul class="ie-round-section ie-questions">
+                                                <% round.questions.forEach(function(q) { %>
+                                                <li><%= q %></li>
+                                                <% }); %>
+                                            </ul>
+                                        </div>
+
+                                        <div class="ie-round-section">
+                                            <h4>Difficulty</h4>
+                                            <p>
+                                                The overall difficulty of this round was assessed as
+                                                <strong class="ie-difficulty-<%= round.difficulty.toLowerCase() %>">
+                                                    <%= round.difficulty.charAt(0).toUpperCase() + round.difficulty.slice(1) %>
+                                                </strong> by the student.
+                                            </p>
+                                        </div>
+
+                                        <div class="ie-round-section">
+                                            <h4>Preparation Suggestions</h4>
+                                            <ul class="ie-round-section ie-prep-tips">
+                                                <% round.preparationTips.forEach(function(tip) { %>
+                                                <li><%= tip %></li>
+                                                <% }); %>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }); %>
+                            </section>
+
+                            <!-- My Experience -->
+                            <div class="ie-my-experience">
+                                <h3>My Experience</h3>
+                                <p><%= experience.overallExperience %></p>
+                            </div>
+
+                            <!-- What I Would Suggest -->
+                            <div class="ie-suggestions">
+                                <h3>What I Would Suggest to Future Students</h3>
+                                <ul>
+                                    <% experience.suggestions.forEach(function(suggestion) { %>
+                                    <li><%= suggestion %></li>
+                                    <% }); %>
+                                </ul>
+                            </div>
+
+                            <!-- Company Information -->
+                            <div class="ie-info-card">
+                                <h2>Know Before You Interview</h2>
+                                <ul>
+                                    <% company.knowBeforeInterview.forEach(function(item) { %>
+                                    <li><%= item %></li>
+                                    <% }); %>
+                                </ul>
+                            </div>
+
+                            <!-- Quick Preparation Checklist -->
+                            <div class="ie-checklist-section">
+                                <h2 class="ie-checklist-title">Before Your Interview</h2>
+                                <div class="ie-checklist">
+                                    <div class="ie-checklist-item">Research the company</div>
+                                    <div class="ie-checklist-item">Understand the job description</div>
+                                    <div class="ie-checklist-item">Revise DSA</div>
+                                    <div class="ie-checklist-item">Revise OOP</div>
+                                    <div class="ie-checklist-item">Revise DBMS</div>
+                                    <div class="ie-checklist-item">Revise OS</div>
+                                    <div class="ie-checklist-item">Prepare your projects</div>
+                                    <div class="ie-checklist-item">Prepare resume-based questions</div>
+                                    <div class="ie-checklist-item">Practice coding problems</div>
+                                    <div class="ie-checklist-item">Prepare HR questions</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+
+            <!-- Back to Companies -->
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="/interview-experiences" class="ie-back-btn">
+                    <i class="fa fa-arrow-left"></i> Back to Companies List
+                </a>
+            </div>
+
+        </section>
+    </div>
+
+    <%- include('templates/footer-1.ejs') -%>
+    <script src="/scripts/interviewExperiences.js"></script>
+</body>
+</html>
